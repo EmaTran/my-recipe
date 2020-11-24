@@ -8,9 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Search</title>
 </head>
 <body>
-Search
+<form action="recipe.jsp" method="POST">
+    Search
+
+</form>
 </body>
 </html>
