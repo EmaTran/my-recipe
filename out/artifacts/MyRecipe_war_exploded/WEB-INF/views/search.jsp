@@ -11,13 +11,9 @@
     <title>Search</title>
 </head>
 <body>
-<<<<<<< HEAD
-<form action="recipe" method="POST">
-=======
 <form action="recipe.jsp" method="POST">
->>>>>>> origin/main
     Search
-
+Search page
 </form>
 </body>
 </html>
