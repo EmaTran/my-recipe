@@ -11,7 +11,7 @@
     <title>Search</title>
 </head>
 <body>
-<form action="recipe.jsp" method="POST">
+<form action="recipe" method="POST">
     Search
 Search page
 </form>

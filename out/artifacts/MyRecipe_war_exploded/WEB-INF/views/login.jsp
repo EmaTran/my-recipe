@@ -11,6 +11,8 @@
     <title>Superstore</title>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
           rel="stylesheet">
+
+
     <style>
         h1 {
             text-align: center;
@@ -21,12 +23,15 @@
     </style>
 </head>
 <body>
+<%--<img src="${pageContext.request.contextPath}/resources/images/superstore_logo.jpg" alt="Store logo">--%>
+<%--<img src="<c:url value="/resources/images/superstore_logo.jpg" />" alt="Store logo" />--%>
+
 <p><font color="red">${errorMessage}</font></p>
 
 <h1>Login Page</h1>
 
 <div>
-    <form method="POST" action="../../search.jsp">
+    <form method="POST" action="search">
         <fieldset class="form-group">
             <label>Name :</label>
             <br>
