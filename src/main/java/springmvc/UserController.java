@@ -47,7 +47,7 @@ public class UserController {
     public String ReturnSearchPage() {
         // Logic here
         //Suzuka
-        return "/search";
+        return "search";
     }
 
 
@@ -59,6 +59,16 @@ public class UserController {
         //Suzuka
         return "register";
     }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String returnRegister() {
+        // Logic here
+        //Suzuka
+        return "register";
+    }
+
+
+
 
     @RequestMapping(value = "/recipePage", method = RequestMethod.GET)
     public String recipePage() {

@@ -45,8 +45,10 @@
     </style>
 </head>
 <body>
-<%--<img src="${pageContext.request.contextPath}/resources/images/superstore_logo.jpg" alt="Store logo">--%>
-<%--<img src="<c:url value="/resources/images/superstore_logo.jpg" />" alt="Store logo" />--%>
+<div>
+    <%--<img src="${pageContext.request.contextPath}/resources/images/superstore_logo.jpg" alt="Store logo">--%>
+    <%--<img src="<c:url value="/resources/images/superstore_logo.jpg" />" alt="Store logo" />--%>
+</div>
 
 <p><font color="red">${errorMessage}</font></p>
 
@@ -73,11 +75,14 @@
             <br>
             <br>
             <br>
-            <label>New User</label>
+        </fieldset>
+    </form>
+    <form method="POST" action="register">
+        <fieldset >
+    <label>New User</label>
             <p></p>
             <button name="subject" type="submit" value="signUp">Sign Up</button>
         </fieldset>
-
     </form>
 </div>
 
