@@ -13,17 +13,12 @@ public class UserController {
 
     @Autowired
     private LoginService loginService;
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+
+    @RequestMapping(value = {"user/login", "/user", "/user/login"})
     public String showLogin() {
         // Logic here
         //Suzuka
-        return "login";
-    }
-
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String returnAfterLogin(){
-        //    return "/WEB-INF/list-todos.jsp";
-        return "/login";
+        return "user/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -72,21 +67,19 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value ={"user/register", "/user", "/user/register"})
     public String register() {
         // Logic here
         //Chau code
-        return "register";
+        return "user/register";
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "user/register", method = RequestMethod.POST)
     public String returnRegister() {
         // Logic here
         //Suzuka
-        return "register";
+        return "user/register";
     }
-
-
 
 
     @RequestMapping(value = "/recipePage", method = RequestMethod.GET)
