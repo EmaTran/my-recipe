@@ -26,6 +26,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
+   //Suzuka
     public String handleUserLogin(ModelMap model, @RequestParam String name, @RequestParam String password){
 //        if(!loginService.validateUser(name, password)){
 //            model.put("errorMessage", "Invalid Credentials");
@@ -46,7 +47,7 @@ public class UserController {
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public String ReturnSearchPage() {
         // Logic here
-        //Suzuka
+        //Kunal code
         return "/search";
     }
 
@@ -56,7 +57,7 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String register() {
         // Logic here
-        //Suzuka
+        //Chau code
         return "register";
     }
 
@@ -64,7 +65,7 @@ public class UserController {
     public String recipePage() {
 
         // Logic here
-        //Suzuka
+        //Suzuka code
 
         return "recipePage";
     }
@@ -73,7 +74,7 @@ public class UserController {
     public String myCart() {
 
         // Logic here
-        //Suzuka
+        //Aryan code
 
 
         return "myCart";
