@@ -12,7 +12,6 @@
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
           rel="stylesheet">
 
-
     <style>
         h1 {
             text-align: center;
@@ -54,19 +53,19 @@
 
 <h1>Login Page</h1>
 
-<div>
+<div class="container">
     <form method="POST" action="search">
         <fieldset class="form-group">
             <label><b>Sign In</b></label>
             <br>
             <p></p>
             <br>
-            <label>Name :</label>
+            <label>Name:</label>
             <br>
             <input name="name" type="text" class="form-control" />
             </br>
             <br>
-            <label>Password :</label>
+            <label>Password:</label>
             <br>
             <input name="password" type="password" class="form-control"/>
             <br>

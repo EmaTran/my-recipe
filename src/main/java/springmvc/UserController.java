@@ -1,5 +1,6 @@
 package springmvc;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping
 public class UserController {
 
+    @Autowired
+    private LoginService loginService;
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String showLogin() {
         // Logic here
@@ -27,13 +30,13 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
    //Suzuka
-    public String handleUserLogin(ModelMap model, @RequestParam String name, @RequestParam String password){
-//        if(!loginService.validateUser(name, password)){
-//            model.put("errorMessage", "Invalid Credentials");
-//            return "login";
-//        }
-//        model.put("name", name);
-//        model.addAttribute("todos", service.retrieveTodos(name));
+    public String handleUserLogin(ModelMap model, @RequestParam String userName, @RequestParam String password){
+        if(!loginService.validateUser(userName, password)){
+            model.put("errorMessage", "Invalid Credentials");
+            return "login";
+        }
+        model.put("name", userName);
+    //    model.addAttribute("todos", service.retrieveTodos(userName));
         return "login";
     }
 
@@ -56,6 +59,19 @@ public class UserController {
     }
 
 
+    @RequestMapping(value = "/recipeList", method = RequestMethod.GET)
+    public String recipeListPage() {
+        // Logic here
+        //Suzuka
+        return "recipeList";
+    }
+
+    @RequestMapping(value = "/recipeList", method = RequestMethod.POST)
+    public String returnRecipeListPage() {
+        // Logic here
+        //Suzuka
+        return "recipeList";
+    }
 
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)

@@ -9,6 +9,36 @@
 <html>
 <head>
     <title>Home</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: left;
+            margin: auto;
+            width: 30%;
+            border-color: dimgray;
+            color: dimgray;
+            font-family: Arial, sans-serif;
+
+        }
+        input{
+            width: 100%;
+        }
+        p {
+            border-bottom-style: solid;
+            border-color: lightblue;
+        }
+
+        button {
+            background-color: darkblue;
+            border-color: darkblue;
+            color: white;
+            border-radius: 5%;
+            padding: 2% 5%;
+
+        }
+    </style>
 </head>
 <h1>Search Page</h1>
 
@@ -18,7 +48,11 @@
         <img src="${pageContext.request.contextPath}/resources/images/superstore_logo.jpg" alt="Store logo">
         <%--<img src="<c:url value="/resources/images/superstore_logo.jpg" />" alt="Store logo" />--%>
     </div>
-    <form action="recipe" method="POST">
+    <form action="recipeList" method="POST">
+
+        <input type="text" name="searchRecipe" id="searchRecipe" placeholder="Search Recipe">
+        <input type="submit" name="LogIn" id="logIn">
+        <br>
         <select name="Meal Time">
             <option value="Breakfast" label="Breakfast">Breakfast</option>
             <option value="Lunch" label="Lunch">Lunch</option>
@@ -47,11 +81,6 @@
         <br>
         <button name="option" type="submit" value="chooseOption">Choose Option to Continue</button>
 
-
-
-
-        Search
-        Search page
     </form>
 </div>
 
