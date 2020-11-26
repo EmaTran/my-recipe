@@ -18,13 +18,37 @@
             text-align: center;
         }
         form {
-            text-align: center;
+            text-align: left;
+            margin: auto;
+            width: 30%;
+            border-color: dimgray;
+            color: dimgray;
+            font-family: Arial, sans-serif;
+
+        }
+        input{
+            width: 100%;
+        }
+        p {
+            border-bottom-style: solid;
+            border-color: lightblue;
+        }
+
+        button {
+            background-color: darkblue;
+            border-color: darkblue;
+            color: white;
+            border-radius: 5%;
+            padding: 2% 5%;
+
         }
     </style>
 </head>
 <body>
-<%--<img src="${pageContext.request.contextPath}/resources/images/superstore_logo.jpg" alt="Store logo">--%>
-<%--<img src="<c:url value="/resources/images/superstore_logo.jpg" />" alt="Store logo" />--%>
+<div>
+    <%--<img src="${pageContext.request.contextPath}/resources/images/superstore_logo.jpg" alt="Store logo">--%>
+    <%--<img src="<c:url value="/resources/images/superstore_logo.jpg" />" alt="Store logo" />--%>
+</div>
 
 <p><font color="red">${errorMessage}</font></p>
 
@@ -33,6 +57,10 @@
 <div>
     <form method="POST" action="search">
         <fieldset class="form-group">
+            <label><b>Sign In</b></label>
+            <br>
+            <p></p>
+            <br>
             <label>Name :</label>
             <br>
             <input name="name" type="text" class="form-control" />
@@ -46,11 +74,15 @@
             <button name="subject" type="submit" value="signIn">Sign In</button>
             <br>
             <br>
-            <label>New User</label>
             <br>
+        </fieldset>
+    </form>
+    <form method="POST" action="register">
+        <fieldset >
+    <label>New User</label>
+            <p></p>
             <button name="subject" type="submit" value="signUp">Sign Up</button>
         </fieldset>
-
     </form>
 </div>
 
