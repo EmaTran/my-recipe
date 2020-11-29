@@ -7,7 +7,7 @@
 <fmt:formatDate var="currentDate" value="${now}" pattern="yyyy-MM-dd"/>
 
 <c:choose>
-    <c:when test="${empty customer}">
+    <c:when test="${empty menu}">
         <c:set var="title" value="Insert"/>
     </c:when>
     <c:otherwise>
@@ -23,40 +23,40 @@
         <div class="container mt-5">
 
             <form id="customerForm">
-                <input type="text" id="id" value="${customer.id}" hidden>
+                <input type="text" id="id" value="${menu.id}" hidden>
 
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="fullname">Fullname</label>
                     <div class="col-lg-9">
                         <input class="form-control" type="text" id="fullname" name="fullname"
-                               required value="${customer.fullname}">
+                               required value="${menu.fullname}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="salary">Salary</label>
                     <div class="col-lg-9">
                         <input class="form-control" type="number" id="salary" name="salary"
-                               required value="${customer.salary}">
+                               required value="${menu.salary}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="email">Email</label>
                     <div class="col-lg-9">
                         <input class="form-control" type="email" id="email" name="email"
-                               required value="${customer.email}">
+                               required value="${menu.email}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="phoneNumber">Phone</label>
                     <div class="col-lg-9">
                         <input class="form-control" type="text" id="phoneNumber" name="phoneNumber" required
-                               placeholder="xxx-xxx-xxxx" pattern='\d{3}-\d{3}-\d{4}' value="${customer.phoneNumber}">
+                               placeholder="xxx-xxx-xxxx" pattern='\d{3}-\d{3}-\d{4}' value="${menu.phoneNumber}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="dob">Date of Birth</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="date" id="dob" name="dob" value="${customer.dateOfBirth}"
+                        <input class="form-control" type="date" id="dob" name="dob" value="${menu.dateOfBirth}"
                                required min="1900-01-01" max="${currentDate}">
                     </div>
                 </div>

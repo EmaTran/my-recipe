@@ -54,7 +54,7 @@
 <h1>Login Page</h1>
 
 <div class="container">
-    <form method="POST" action="search">
+    <form method="POST" action="login">
         <fieldset class="form-group">
             <label><b>Sign In</b></label>
             <br>

@@ -7,20 +7,20 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Customers")
+@Table(name = "Menu")
 @DynamicUpdate
-public class Customer implements IEntity, Serializable {
+public class Menu implements IEntity, Serializable {
 
     @Id
     @GeneratedValue
     @Column(name = "Id")
     private int id;
 
-    @Column(name = "Salary")
-    private int salary;
+    @Column(name = "Menu_name")
+    private int menuName;
 
-    @Column(name = "Fullname")
-    private String fullname;
+    @Column(name = "menu_decription")
+    private String menuDescription;
 
     @Column(name = "Email")
     private String email;
@@ -31,7 +31,7 @@ public class Customer implements IEntity, Serializable {
     @Column(name = "DateOfBirth")
     private String dateOfBirth;
 
-    public Customer() {
+    public Menu() {
     }
 
     public int getId() {
@@ -42,20 +42,20 @@ public class Customer implements IEntity, Serializable {
         this.id = id;
     }
 
-    public int getSalary() {
-        return salary;
+    public int getMenuName() {
+        return menuName;
     }
 
-    public void setSalary(int salary) {
-        this.salary = salary;
+    public void setMenuName(int menuName) {
+        this.menuName = menuName;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getMenuDescription() {
+        return menuDescription;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setMenuDescription(String menuDescription) {
+        this.menuDescription = menuDescription;
     }
 
     public String getEmail() {

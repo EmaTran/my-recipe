@@ -14,7 +14,7 @@ public class UserController {
     @Autowired
     private LoginService loginService;
 
-    @RequestMapping(value = {"user/login", "/user", "/user/login"})
+    @RequestMapping(value = {"/login"},method=RequestMethod.GET)
     public String showLogin() {
         // Logic here
         //Suzuka
@@ -23,7 +23,10 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
    //Suzuka
-    public String handleUserLogin(ModelMap model, @RequestParam String userName, @RequestParam String password){
+    public String handleUserLogin(ModelMap model,
+                                  @RequestParam String userName,
+                                  @RequestParam String password,
+                                  @RequestParam String subject){
         if(!loginService.validateUser(userName, password)){
             model.put("errorMessage", "Invalid Credentials");
             return "login";

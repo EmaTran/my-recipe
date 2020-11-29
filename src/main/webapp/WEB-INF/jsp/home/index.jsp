@@ -31,17 +31,17 @@
                         </thead>
                         <tbody>
 
-                        <c:forEach var="customer" items="${customers}">
-                            <tr id="${customer.id}">
-                                <td>${customer.id}</td>
-                                <td>${customer.fullname}</td>
-                                <td>${customer.salary}</td>
-                                <td>${customer.email}</td>
-                                <td>${customer.phoneNumber}</td>
-                                <td class="d-flex justify-content-between align-items-center">${customer.dateOfBirth}
+                        <c:forEach var="menu" items="${menus}">
+                            <tr id="${menu.id}">
+                                <td>${menu.id}</td>
+                                <td>${menu.fullname}</td>
+                                <td>${menu.salary}</td>
+                                <td>${menu.email}</td>
+                                <td>${menu.phoneNumber}</td>
+                                <td class="d-flex justify-content-between align-items-center">${menu.dateOfBirth}
                                     <span>
-                                        <button onclick="ajaxpost(${customer.id})" class="btn btn-danger">Delete</button>
-                                        <a href="home/update?id=${customer.id}" class="btn btn-primary">Edit</a>
+                                        <button onclick="ajaxpost(${menu.id})" class="btn btn-danger">Delete</button>
+                                        <a href="home/update?id=${menu.id}" class="btn btn-primary">Edit</a>
                                     </span>
                                 </td>
                             </tr>

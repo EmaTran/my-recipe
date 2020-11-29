@@ -2,13 +2,10 @@ package com.myrecipe.webUI.controllers;
 
 import com.myrecipe.business.abstrct.ICustomerService;
 import com.myrecipe.business.concrete.managers.CustomerManager;
-import com.myrecipe.entities.Customer;
+import com.myrecipe.entities.Menu;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -25,8 +22,8 @@ public class HomeController {
 
     @RequestMapping(value = {"/", "/home", "/home/index"})
     public String index(Model model) {
-        List<Customer> customers = _customerService.getAll();
-        model.addAttribute("customers", customers);
+        List<Menu> menus = _customerService.getAll();
+        model.addAttribute("customers", menus);
         return "home/index";
     }
 
@@ -45,22 +42,22 @@ public class HomeController {
     public @ResponseBody
     String ajaxcreateorupdate(HttpServletRequest request) {
 
-        Customer customer = new Customer();
-        customer.setSalary(Integer.parseInt(request.getParameter("salary")));
-        customer.setFullname(request.getParameter("fullname"));
-        customer.setEmail(request.getParameter("email"));
-        customer.setPhoneNumber(request.getParameter("phoneNumber"));
-        customer.setDateOfBirth(request.getParameter("dob"));
+        Menu menu = new Menu();
+        menu.setMenuName(Integer.parseInt(request.getParameter("salary")));
+        menu.setMenuDescription(request.getParameter("fullname"));
+        menu.setEmail(request.getParameter("email"));
+        menu.setPhoneNumber(request.getParameter("phoneNumber"));
+        menu.setDateOfBirth(request.getParameter("dob"));
 
         String id = request.getParameter("id");
 
         String msg, method;
         if (id == null || id.isEmpty()) {
-            msg = _customerService.add(customer) ? "OK" : "ERROR";
+            msg = _customerService.add(menu) ? "OK" : "ERROR";
             method = "CREATE";
         } else {
-            customer.setId(Integer.parseInt(id));
-            msg = _customerService.update(customer) ? "OK" : "ERROR";
+            menu.setId(Integer.parseInt(id));
+            msg = _customerService.update(menu) ? "OK" : "ERROR";
             method = "UPDATE";
         }
         return String.format("{\"msg\":\"%1s\", \"method\":\"%2s\"}", msg, method);
@@ -72,6 +69,13 @@ public class HomeController {
         int id = Integer.parseInt(request.getParameter("id"));
         String msg = _customerService.deleteById(id) ? "OK" : "ERROR";
         return String.format("{\"msg\":\"%1s\"}", msg);
+    }
+    @RequestMapping(value = "/foos",method= RequestMethod.GET)
+    @ResponseBody
+    public String chauxinh1() {
+        List<Menu> menus = _customerService.getAll();
+//        model.addAttribute("customers", menus);
+        return "chauxinh";
     }
 }
 
