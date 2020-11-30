@@ -83,7 +83,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "user/recipePage", method = RequestMethod.GET)
+    @RequestMapping(value = {"/recipePage", "user/recipePage"}, method = RequestMethod.GET)
     public String recipePage() {
 
         // Logic here
@@ -92,12 +92,28 @@ public class UserController {
         return "user/recipePage";
     }
 
-    @RequestMapping(value = "user/myCart", method = RequestMethod.GET)
+    @RequestMapping(value = {"/recipePage", "user/recipePage"}, method = RequestMethod.POST)
+    public String returnRecipePage() {
+
+        // Logic here
+
+        return "user/recipePage";
+    }
+
+    @RequestMapping(value = {"myCart", "user/myCart"}, method = RequestMethod.GET)
     public String myCart() {
 
         // Logic here
         //Aryan code
 
+        return "user/myCart";
+    }
+
+    @RequestMapping(value = {"myCart", "user/myCart"}, method = RequestMethod.POST)
+    public String returnMyCart() {
+
+        // Logic here
+        //Aryan code
 
         return "user/myCart";
     }

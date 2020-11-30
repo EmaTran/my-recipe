@@ -108,7 +108,7 @@
 
         .w-20 {
             display: inline-block;
-            float: left;
+            float: right;
             padding: 0 8px;
             width: 20%;
         }
