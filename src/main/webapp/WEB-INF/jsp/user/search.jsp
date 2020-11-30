@@ -108,7 +108,7 @@
 
         .w-20 {
             display: inline-block;
-            float: right;
+            float: left;
             padding: 0 8px;
             width: 20%;
         }
@@ -201,6 +201,7 @@
 <h1>Search Recipe</h1>
 
 <body>
+
 <div class="container">
     <div class="header clearfix">
         <div class="w-20">

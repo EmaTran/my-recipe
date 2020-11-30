@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-    <title>Superstore</title>
+    <meta charset="utf-8">
+    <title>Superstore LogIn</title>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
           rel="stylesheet">
 
@@ -252,7 +253,7 @@
         <form method="POST" action="login">
             <div class="form-group">
                 <label for="name"> User Name: </label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="johndoe">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Username">
             </div>
 
             <div class="form-group">

@@ -1,11 +1,13 @@
 package com.myrecipe.webUI.controllers;
 
+import com.myrecipe.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping
@@ -35,6 +37,7 @@ public class UserController {
     //    model.addAttribute("todos", service.retrieveTodos(userName));
         return "user/login";
     }
+
 
     @RequestMapping(value = {"user/search", "/search"}, method = RequestMethod.GET)
     public String showSearchPage(ModelMap model) {
@@ -76,9 +79,27 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/register", "/user/register"}, method = RequestMethod.POST)
-    public String returnRegister() {
+    public String returnRegister(
+//            ModelMap model,
+//            @RequestParam String first, @RequestParam String last,
+//                                 @RequestParam String email, @RequestParam int phone,
+//                                 @RequestParam String userName, @RequestParam String password
+    ) {
         // Logic here
         //Suzuka
+//        User user = new User();
+//        user.setFirstName(first);
+//        user.setLastName(last);
+//        user.setEmail(email);
+//        user.setName(userName);
+//        user.setPassword(password);
+//
+//        model.put("fName", first);
+//        model.put("lName", last);
+//        model.put("email", email);
+//        model.put("userName", userName);
+//        model.put("password", password);
+
         return "user/register";
     }
 
@@ -87,7 +108,7 @@ public class UserController {
     public String recipePage() {
 
         // Logic here
-        //Suzuka code
+        //kunal code
 
         return "user/recipePage";
     }
@@ -96,6 +117,7 @@ public class UserController {
     public String returnRecipePage() {
 
         // Logic here
+        //kunal code
 
         return "user/recipePage";
     }

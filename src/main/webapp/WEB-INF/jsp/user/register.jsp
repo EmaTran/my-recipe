@@ -21,6 +21,8 @@
       <img src="./assets/store.png" alt="Store logo">
     </div>
 
+    <form method="POST" action="search">
+
     <div class="box">
       Register Form
       <hr>
@@ -62,9 +64,11 @@
         <button class="btn-blue">
           Sign up
         </button>
+
       </div>
       <hr>
     </div>
+    </form>
   </div>
 </body>
 </html>

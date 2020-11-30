@@ -21,7 +21,7 @@
         .container {
             padding: 15px 24px;
             margin: 0 auto;
-            width: 50%;
+            width: 30%;
         }
 
         .text-center {
@@ -76,7 +76,7 @@
 
         .w-20 {
             display: inline-block;
-            float: right;
+            float: left;
             padding: 0 8px;
             width: 20%;
         }
@@ -176,16 +176,23 @@
 <body>
 
 <div class="container">
-    <div class="w-20">
-        <div class="form-group">
-            <input type="text" name="findReceipe" id="findReceipe" placeholder="Find a Receipe">
+    <div class="clearfix">
+        <div class="w-50">
+            <div class="form-group">
+                <input type="text" name="findReceipe" id="findReceipe" placeholder="Find a Receipe">
+            </div>
         </div>
     </div>
+
     <br>
     <br>
 
     <div class = clearfix>
-        <a href="recipePage">Beef and Cheddar Casserole</a>
+
+        <a href="recipePage">Roast Beef with Roasted Potatoes and Carrots</a>
+        <br>
+        <br>
+        <a href="">Beef and Cheddar Casserole</a>
         <br>
         <br>
         <a href="">Beef Burger</a>
@@ -195,9 +202,7 @@
         <br>
         <br>
         <a href="">Beef Stroganoff</a>
-        <br>
-        <br>
-        <a href="">Roast Beef with Roasted Potatoes and Carrots</a>
+
     </div>
 
 </div>
