@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: TakiNT
@@ -6,83 +7,281 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="en">
+
 <head>
     <title>Home</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="./styles/index.css">
     <style>
         h1 {
             text-align: center;
         }
-        form {
-            text-align: left;
-            margin: auto;
-            width: 30%;
-            border-color: dimgray;
-            color: dimgray;
-            font-family: Arial, sans-serif;
+        /*form {*/
+        /*    text-align: left;*/
+        /*    margin: auto;*/
+        /*    width: 30%;*/
+        /*    border-color: dimgray;*/
+        /*    color: dimgray;*/
+        /*    font-family: Arial, sans-serif;*/
 
+        /*}*/
+        /*input{*/
+        /*    width: 100%;*/
+        /*}*/
+        /*p {*/
+        /*    border-bottom-style: solid;*/
+        /*    border-color: lightblue;*/
+        /*}*/
+
+        /*button {*/
+        /*    background-color: darkblue;*/
+        /*    border-color: darkblue;*/
+        /*    color: white;*/
+        /*    border-radius: 5%;*/
+        /*    padding: 2% 5%;*/
+
+        /*}*/
+
+
+        * {
+            box-sizing: border-box;
         }
-        input{
+
+        .container {
+            padding: 15px 24px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .m-center {
+            margin: 0 auto;
+        }
+
+        .shop-logo img {
+            max-height: 150px;
+            width: auto;
+        }
+
+        .shop-logo.small img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .box {
+            border: 1px solid #bbb;
+            margin: 0 auto;
+            padding: 16px 28px;
+            width: 70%;
+        }
+
+        hr {
+            border-top: 1px solid #ddd;
+        }
+
+        hr.special {
+            border-top: 5px solid burlywood;
+        }
+
+        .heading {
+            font-weight: bold;
+            margin-top: 32px;
+        }
+
+        .mt-0 {
+            margin-top: 0 !important;
+        }
+
+        .mt-20 {
+            margin-top: 20px !important;
+        }
+
+        .w-20 {
+            display: inline-block;
+            float: left;
+            padding: 0 8px;
+            width: 20%;
+        }
+
+        .w-20:after {
+            content: '';
+            display: block;
+            min-height: 2px;
+        }
+
+        .w-50 {
+            display: inline-block;
+            float: left;
+            padding: 0 8px;
+            width: 50%;
+        }
+
+        .w-80 {
+            display: inline-block;
+            float: left;
+            padding: 0 8px;
+            width: 80%;
+        }
+
+        .form-group,
+        .form-group-inline {
+            margin-top: 20px;
+        }
+
+        .form-group label,
+        .form-group input {
+            display: block;
+        }
+
+        .form-group input {
+            border: 1px solid #bbb;
+            border-radius: 3px;
+            margin-top: 6px;
+            padding: 6px 12px;
             width: 100%;
         }
-        p {
-            border-bottom-style: solid;
-            border-color: lightblue;
+
+        .clearfix::before,
+        .clearfix::after {
+            clear: both;
+            content: ' ';
+            display: table;
         }
 
-        button {
-            background-color: darkblue;
-            border-color: darkblue;
-            color: white;
-            border-radius: 5%;
-            padding: 2% 5%;
-
+        .form-group-inline label {
+            float: left;
+            padding-top: 7px;
+            width: 20%;
         }
+
+        .form-group-inline input {
+            border: 1px solid #bbb;
+            border-radius: 3px;
+            float: left;
+            margin-top: 6px;
+            padding: 6px 12px;
+            width: 100%;
+        }
+
+        select {
+            background-color: #003180;
+            border-radius: 3px;
+            color: #fff;
+            padding: 8px 16px;
+            width: 100%;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .btn-blue {
+            background-color: #003180;
+            border-radius: 6px;
+            color: #fff;
+            display: block;
+            padding: 4px 8px;
+            text-transform: uppercase;
+        }
+
     </style>
 </head>
-<h1>Search Page</h1>
+<h1>Search Recipe</h1>
 
 <body>
 <div class="container">
-    <div>
-        <img src="${pageContext.request.contextPath}/resources/images/superstore_logo.jpg" alt="Store logo">
-        <%--<img src="<c:url value="/resources/images/superstore_logo.jpg" />" alt="Store logo" />--%>
-    </div>
+    <div class="header clearfix">
+        <div class="w-20">
+            <div class="shop-logo small">
+                <img src="${pageContext.request.contextPath}/resources/images/superstore.jpg" alt="Store logo">
+<%--                <img src="<c:url value="/resources/images/superstore.jpg" />" alt="Store logo" />--%>
+            </div>
+        </div>
+
     <form action="recipeList" method="POST">
 
-        <input type="text" name="searchRecipe" id="searchRecipe" placeholder="Search Recipe">
-        <input type="submit" name="LogIn" id="logIn">
+        <div class="form-group clearfix">
+<%--            <div class="w-80 text-center">--%>
+<%--                Receipe--%>
+<%--            </div>--%>
+            <div class="w-20">
+                <div class="form-group">
+                    <input type="text" name="findReceipe" id="findReceipe" placeholder="Find a Receipe">
+                </div>
+            </div>
+        </div>
         <br>
-        <select name="Meal Time">
-            <option value="Breakfast" label="Breakfast">Breakfast</option>
-            <option value="Lunch" label="Lunch">Lunch</option>
-            <option value="Dinner" label="Dinner">Dinner</option>
-            <option value="Dessert" label="Dessert">Dinner</option>
-        </select>
-        <select name="Meat">
-            <option value="Beef" label="Beef">Beef</option>
-            <option value="Lamb" label="Lamb">Lamb</option>
-            <option value="Chicken" label="Chicken">Chicken</option>
-            <option value="Pork" label="Pork">Pork</option>
-        </select>
-        <select name="Fish">
-            <option value="WildCod" label="WildCod">WildCod</option>
-            <option value="Salmon" label="Salmon">Salmon</option>
-            <option value="Tuna" label="Tuna">Tuna</option>
-            <option value="Mackerel" label="Mackerel">Mackerel</option>
-        </select>
-        <select name="Veggies">
-            <option value="Bokchoy" label="Bokchoy">Bokchoy</option>
-            <option value="Broccoli" label="Broccoli">Broccoli</option>
-            <option value="Mushroom" label="Mushroom">Mushroom</option>
-            <option value="Carrot" label="Dessert">Carrot</option>
-        </select>
+
+        <div class="form-group clearfix">
+            <div class="w-20">
+                <select name="mealTime" id="mealTime">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+            </div>
+
+            <div class="w-20">
+                <select name="meat" id="meat">
+                    <option value="beef">Beef</option>
+                    <option value="lamb">Lamb</option>
+                    <option value="chicken">Chicken</option>
+                    <option value="pork">Pork</option>
+                </select>
+            </div>
+
+            <div class="w-20">
+                <select name="fish" id="fish">
+                    <option value="wildCod">WildCod</option>
+                    <option value="simon">Simon</option>
+                    <option value="tuna">Tuna</option>
+                    <option value="marcekel">Marcekel</option>
+                </select>
+            </div>
+
+            <div class="w-20">
+                <select name="veggies" id="veggies">
+                    <option value="bokchoy">Bokchoy</option>
+                    <option value="brocoli">Brocoli</option>
+                    <option value="mushroom">Mushroom</option>
+                    <option value="carrot">Carrot</option>
+                </select>
+            </div>
+
+            <div class="w-20">
+                <select name="others" id="others">
+                    <option value="other">Other</option>
+
+                </select>
+            </div>
+        </div>
         <br>
         <br>
-        <button name="option" type="submit" value="chooseOption">Choose Option to Continue</button>
+        <div class="form-group">
+            <button class="btn-blue m-center" name="option" type="submit" value="chooseOption" >
+                Choose option to continue
+            </button>
+        </div>
+
+<%--        <div class="w-80">--%>
+<%--            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam nemo vel molestiae repellat? Ipsa quaerat optio vel totam quos aliquid tenetur possimus dolorum temporibus quas quibusdam nihil, at modi eaque.--%>
+<%--        </div>--%>
 
     </form>
 </div>
-
+</div>
 </body>
 </html>

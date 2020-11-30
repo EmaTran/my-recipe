@@ -1,77 +1,92 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: TakiNT
+  Date: 11/21/2020
+  Time: 2:41 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Superstore</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          rel="stylesheet">
 
-<t:layoutpage>
-    <jsp:attribute name="title">Index</jsp:attribute>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: left;
+            margin: auto;
+            width: 30%;
+            border-color: dimgray;
+            color: dimgray;
+            font-family: Arial, sans-serif;
 
-    <jsp:body>
-        <div class="container mt-5">
+        }
+        input{
+            width: 100%;
+        }
+        p {
+            border-bottom-style: solid;
+            border-color: lightblue;
+        }
 
-            <div class="card">
-                <div class="card-header bg-white font-weight-bold">
-                    <div class="d-flex justify-content-between">
-                        Customers
-                        <a href="home/create" class="btn btn-sm btn-success">Insert</a>
-                    </div>
-                </div>
+        button {
+            background-color: darkblue;
+            border-color: darkblue;
+            color: white;
+            border-radius: 5%;
+            padding: 2% 5%;
 
-                <div class="card-body">
+        }
+    </style>
+</head>
+<body>
+<div>
+    <%--<img src="${pageContext.request.contextPath}/resources/images/superstore_logo.jpg" alt="Store logo">--%>
+    <%--<img src="<c:url value="/resources/images/superstore_logo.jpg" />" alt="Store logo" />--%>
+</div>
 
-                    <table class="table table-hover table-responsive-md">
-                        <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Fullname</th>
-                            <th scope="col">Salary</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Date of Birth</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+<p><font color="red">${errorMessage}</font></p>
 
-                        <c:forEach var="menu" items="${menus}">
-                            <tr id="${menu.id}">
-                                <td>${menu.id}</td>
-                                <td>${menu.fullname}</td>
-                                <td>${menu.salary}</td>
-                                <td>${menu.email}</td>
-                                <td>${menu.phoneNumber}</td>
-                                <td class="d-flex justify-content-between align-items-center">${menu.dateOfBirth}
-                                    <span>
-                                        <button onclick="ajaxpost(${menu.id})" class="btn btn-danger">Delete</button>
-                                        <a href="home/update?id=${menu.id}" class="btn btn-primary">Edit</a>
-                                    </span>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+<h1>Login Page</h1>
 
-        <script>
-            function ajaxpost(id) {
-                $.ajax({
-                    type: "post",
-                    url: "${pageContext.request.contextPath}/delete",
-                    data: {"id": id},
-                    success: function (res) {
-                        res = JSON.parse(res);
-                        if (res.msg === "OK") {
-                            $('#' + id).remove();
-                        } else
-                            alert("An error occurred during the operation.");
-                    },
-                    error: function (err) {
-                        alert("Error! :\n" + err.message);
-                    }
-                });
-            }
-        </script>
+<div class="container">
+    <form method="POST" action="login">
+        <fieldset class="form-group">
+            <label><b>Sign In</b></label>
+            <br>
+            <p></p>
+            <br>
+            <label>Name:</label>
+            <br>
+            <input name="name" type="text" class="form-control" />
+            </br>
+            <br>
+            <label>Password:</label>
+            <br>
+            <input name="password" type="password" class="form-control"/>
+            <br>
+            <br>
+            <button name="subject" type="submit" value="signIn">Sign In</button>
+            <br>
+            <br>
+            <br>
+        </fieldset>
+    </form>
+    <form method="POST" action="register">
+        <fieldset >
+            <label>New User</label>
+            <p></p>
+            <button name="subject" type="submit" value="signUp">Sign Up</button>
+        </fieldset>
+    </form>
+</div>
 
-    </jsp:body>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-</t:layoutpage>
+</body>
+</html>
