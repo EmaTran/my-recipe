@@ -17,15 +17,15 @@ public class SampleDatabase1 {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         // Adding Customers
-        for (int i = 0; i < 10; i++) {
-            Menu menu = new Menu();
-            menu.setMenuName(faker.number().numberBetween(1000, 3000));
-            menu.setMenuDescription(faker.name().fullName());
-            menu.setEmail(faker.internet().emailAddress());
-            menu.setPhoneNumber(faker.numerify("###-###-####"));
-            menu.setDateOfBirth(dateFormat.format(faker.date().birthday()));
+//        for (int i = 0; i < 10; i++) {
+//            Menu menu = new Menu();
+//            menu.setMenuName(faker.number().numberBetween(1000, 3000));
+//            menu.setMenuDescription(faker.name().fullName());
+//            menu.setCategory_id(faker.internet().emailAddress());
+//            menu.setCourse_number(faker.numerify("###-###-####"));
 
-            customerService.add(menu);
+
+//            customerService.add(menu);
         }
     }
-}
+

@@ -17,19 +17,43 @@ public class Menu implements IEntity, Serializable {
     private int id;
 
     @Column(name = "Menu_name")
-    private int menuName;
+    private String menuName;
+
+    @Column(name = "menu_type_code")
+    private int menuTypeCode;
+
+    public int getMenuTypeCode() {
+        return menuTypeCode;
+    }
+
+    public void setMenuTypeCode(int menuTypeCode) {
+        this.menuTypeCode = menuTypeCode;
+    }
+
+    public int getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
+    }
+
+    public int getCourse_number() {
+        return course_number;
+    }
+
+    public void setCourse_number(int course_number) {
+        this.course_number = course_number;
+    }
 
     @Column(name = "menu_decription")
     private String menuDescription;
 
-    @Column(name = "Email")
-    private String email;
+    @Column(name = "category_id")
+    private int category_id;
 
-    @Column(name = "PhoneNumber")
-    private String phoneNumber;
-
-    @Column(name = "DateOfBirth")
-    private String dateOfBirth;
+    @Column(name = "course_number")
+    private int course_number;
 
     public Menu() {
     }
@@ -42,11 +66,11 @@ public class Menu implements IEntity, Serializable {
         this.id = id;
     }
 
-    public int getMenuName() {
+    public String getMenuName() {
         return menuName;
     }
 
-    public void setMenuName(int menuName) {
+    public void setMenuName(String menuName) {
         this.menuName = menuName;
     }
 
@@ -58,27 +82,6 @@ public class Menu implements IEntity, Serializable {
         this.menuDescription = menuDescription;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
 }

@@ -15,9 +15,9 @@ public class LoginService {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
-
         return userName.equalsIgnoreCase("Joy") && password.equals("dummy");
-    } {
+    }
+    {
 
     }
 }

@@ -43,11 +43,10 @@ public class HomeController {
     String ajaxcreateorupdate(HttpServletRequest request) {
 
         Menu menu = new Menu();
-        menu.setMenuName(Integer.parseInt(request.getParameter("salary")));
-        menu.setMenuDescription(request.getParameter("fullname"));
-        menu.setEmail(request.getParameter("email"));
-        menu.setPhoneNumber(request.getParameter("phoneNumber"));
-        menu.setDateOfBirth(request.getParameter("dob"));
+        menu.setCategory_id(Integer.parseInt(request.getParameter("categoryID")));
+        menu.setMenuDescription(request.getParameter("menuDescription"));
+        menu.setMenuName(request.getParameter("menuName"));
+        menu.setCourse_number(Integer.parseInt(request.getParameter("courseNumber")));
 
         String id = request.getParameter("id");
 

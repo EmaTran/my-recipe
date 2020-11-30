@@ -13,6 +13,7 @@ public class User implements IEntity, Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "Id")
     private Long id;
 
