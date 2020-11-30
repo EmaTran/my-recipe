@@ -8,7 +8,7 @@
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>com.myrecipe.entities.Customer</class>
+        <class>com.myrecipe.entities.Menu</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>

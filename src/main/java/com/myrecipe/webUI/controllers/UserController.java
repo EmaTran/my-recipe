@@ -14,67 +14,68 @@ public class UserController {
     @Autowired
     private LoginService loginService;
 
-    @RequestMapping(value = {"user/login", "/user", "/user/login"})
+    @RequestMapping(value = {"user/login", "/login"},method=RequestMethod.GET)
     public String showLogin() {
         // Logic here
         //Suzuka
         return "user/login";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = {"user/login", "/login"}, method = RequestMethod.POST)
    //Suzuka
-    public String handleUserLogin(ModelMap model, @RequestParam String userName, @RequestParam String password){
+    public String handleUserLogin(ModelMap model,
+                                  @RequestParam String userName,
+                                  @RequestParam String password,
+                                  @RequestParam String subject){
         if(!loginService.validateUser(userName, password)){
             model.put("errorMessage", "Invalid Credentials");
-            return "login";
+            return "user/login";
         }
         model.put("name", userName);
     //    model.addAttribute("todos", service.retrieveTodos(userName));
-        return "login";
+        return "user/login";
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    @RequestMapping(value = {"user/search", "/search"}, method = RequestMethod.GET)
     public String showSearchPage(ModelMap model) {
         String user = (String) model.get("user");
     //    model.addAttribute("" );
-        return "/search";
+        return "user/search";
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    @RequestMapping(value = {"user/search", "/search"}, method = RequestMethod.POST)
     public String ReturnSearchPage() {
         // Logic here
 
         //Kunal code
-        return "/search";
-
-
+        return "user/search";
 
     }
 
 
-    @RequestMapping(value = "/recipeList", method = RequestMethod.GET)
+    @RequestMapping(value = {"recipeList", "user/recipeList"}, method = RequestMethod.GET)
     public String recipeListPage() {
         // Logic here
         //Suzuka
-        return "recipeList";
+        return "user/recipeList";
     }
 
-    @RequestMapping(value = "/recipeList", method = RequestMethod.POST)
+    @RequestMapping(value = {"recipeList", "user/recipeList"}, method = RequestMethod.POST)
     public String returnRecipeListPage() {
         // Logic here
         //Suzuka
-        return "recipeList";
+        return "user/recipeList";
     }
 
 
-    @RequestMapping(value ={"user/register", "/user", "/user/register"})
+    @RequestMapping(value ={"/register", "/user/register"}, method = RequestMethod.GET)
     public String register() {
         // Logic here
         //Chau code
         return "user/register";
     }
 
-    @RequestMapping(value = "user/register", method = RequestMethod.POST)
+    @RequestMapping(value = {"/register", "/user/register"}, method = RequestMethod.POST)
     public String returnRegister() {
         // Logic here
         //Suzuka
@@ -82,23 +83,39 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/recipePage", method = RequestMethod.GET)
+    @RequestMapping(value = {"/recipePage", "user/recipePage"}, method = RequestMethod.GET)
     public String recipePage() {
 
         // Logic here
         //Suzuka code
 
-        return "recipePage";
+        return "user/recipePage";
     }
 
-    @RequestMapping(value = "/myCart", method = RequestMethod.GET)
+    @RequestMapping(value = {"/recipePage", "user/recipePage"}, method = RequestMethod.POST)
+    public String returnRecipePage() {
+
+        // Logic here
+
+        return "user/recipePage";
+    }
+
+    @RequestMapping(value = {"myCart", "user/myCart"}, method = RequestMethod.GET)
     public String myCart() {
 
         // Logic here
         //Aryan code
 
+        return "user/myCart";
+    }
 
-        return "myCart";
+    @RequestMapping(value = {"myCart", "user/myCart"}, method = RequestMethod.POST)
+    public String returnMyCart() {
+
+        // Logic here
+        //Aryan code
+
+        return "user/myCart";
     }
 
 }

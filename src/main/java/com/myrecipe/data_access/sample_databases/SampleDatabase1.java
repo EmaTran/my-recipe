@@ -2,7 +2,7 @@ package com.myrecipe.data_access.sample_databases;
 
 import com.myrecipe.business.abstrct.ICustomerService;
 import com.myrecipe.business.concrete.managers.CustomerManager;
-import com.myrecipe.entities.Customer;
+import com.myrecipe.entities.Menu;
 import com.github.javafaker.Faker;
 
 import java.text.DateFormat;
@@ -18,14 +18,14 @@ public class SampleDatabase1 {
 
         // Adding Customers
         for (int i = 0; i < 10; i++) {
-            Customer customer = new Customer();
-            customer.setSalary(faker.number().numberBetween(1000, 3000));
-            customer.setFullname(faker.name().fullName());
-            customer.setEmail(faker.internet().emailAddress());
-            customer.setPhoneNumber(faker.numerify("###-###-####"));
-            customer.setDateOfBirth(dateFormat.format(faker.date().birthday()));
+            Menu menu = new Menu();
+            menu.setMenuName(faker.number().numberBetween(1000, 3000));
+            menu.setMenuDescription(faker.name().fullName());
+            menu.setEmail(faker.internet().emailAddress());
+            menu.setPhoneNumber(faker.numerify("###-###-####"));
+            menu.setDateOfBirth(dateFormat.format(faker.date().birthday()));
 
-            customerService.add(customer);
+            customerService.add(menu);
         }
     }
 }
