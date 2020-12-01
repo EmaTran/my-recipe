@@ -171,7 +171,7 @@
     <div class="header clearfix">
       <div class="w-20">
         <div class="shop-logo small">
-          <img src="./assets/store.jpg" alt="Store logo">
+          <img src="store.jpg">
         </div>
       </div>
       <div class="w-80">
