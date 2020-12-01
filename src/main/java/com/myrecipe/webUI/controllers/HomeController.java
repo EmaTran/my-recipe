@@ -22,8 +22,8 @@ public class HomeController {
 
     @RequestMapping(value = {"/", "/home", "/home/index"})
     public String index(Model model) {
-        List<Menu> menus = _customerService.getAll();
-        model.addAttribute("customers", menus);
+        //List<Menu> menus = new List<Menu>();
+        //model.addAttribute("customers", menus);
         return "home/index";
     }
 
@@ -50,13 +50,13 @@ public class HomeController {
 
         String id = request.getParameter("id");
 
-        String msg, method;
+        String msg = "", method;
         if (id == null || id.isEmpty()) {
-            msg = _customerService.add(menu) ? "OK" : "ERROR";
+            //msg = _customerService.add(menu) ? "OK" : "ERROR";
             method = "CREATE";
         } else {
-            menu.setId(Integer.parseInt(id));
-            msg = _customerService.update(menu) ? "OK" : "ERROR";
+            //menu.setId(Integer.parseInt(id));
+            //msg = _customerService.update(menu) ? "OK" : "ERROR";
             method = "UPDATE";
         }
         return String.format("{\"msg\":\"%1s\", \"method\":\"%2s\"}", msg, method);
@@ -69,10 +69,11 @@ public class HomeController {
         String msg = _customerService.deleteById(id) ? "OK" : "ERROR";
         return String.format("{\"msg\":\"%1s\"}", msg);
     }
-    @RequestMapping(value = "/foos",method= RequestMethod.GET)
+
+    @RequestMapping(value = "/foos", method = RequestMethod.GET)
     @ResponseBody
     public String chauxinh1() {
-        List<Menu> menus = _customerService.getAll();
+        //List<Menu> menus = _customerService.getAll();
 //        model.addAttribute("customers", menus);
         return "chauxinh";
     }

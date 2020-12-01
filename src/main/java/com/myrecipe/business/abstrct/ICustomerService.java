@@ -1,18 +1,18 @@
 package com.myrecipe.business.abstrct;
 
+import com.myrecipe.entities.Customer;
 import com.myrecipe.entities.Menu;
 
 import java.util.List;
 
 public interface ICustomerService {
+    List<Customer> getAll();
 
-    List<Menu> getAll();
+    Customer getById(int id);
 
-    Menu getById(int id);
+    boolean add(Customer customer);
 
-    boolean add(Menu menu);
-
-    boolean update(Menu menu);
+    boolean update(Customer customer);
 
     boolean deleteById(Integer id);
 }
