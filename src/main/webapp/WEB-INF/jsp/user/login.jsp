@@ -215,7 +215,7 @@
     <form method="POST" action="login">
 
         <div class="shop-logo text-center">
-            <img src="assets/store.png" alt="Store logo">
+            <img src="assets/store.jpg" alt="Store logo">
         </div>
 
         <%--        <fieldset class="form-group">--%>

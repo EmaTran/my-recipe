@@ -170,7 +170,7 @@
 <body>
   <div class="container">
     <div class="shop-logo">
-      <img src="./assets/store.png" alt="Store logo">
+      <img src="./assets/store.jpg" alt="Store logo">
     </div>
 
     <form method="POST" action="search">
