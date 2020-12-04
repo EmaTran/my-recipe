@@ -9,6 +9,4 @@ public class HibernateCustomerDal extends HibernateEntityRepositoryBase<Customer
     public HibernateCustomerDal(Class<Customer> customerClass) {
         super(customerClass);
     }
-
-
 }

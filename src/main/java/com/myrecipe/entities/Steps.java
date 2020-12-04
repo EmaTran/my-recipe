@@ -7,11 +7,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Menu_Recipe")
+@Table(name = "Steps")
 @DynamicUpdate
 public class Steps implements IEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "step_ID")
     private Long stepID;
 
