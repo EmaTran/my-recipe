@@ -11,9 +11,7 @@ import java.io.Serializable;
 @DynamicUpdate
 public class Ref_Menu_Type implements IEntity, Serializable {
     @Id
-    @GeneratedValue
-
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "menu_type_code")
     private Long menu_type_code;
 

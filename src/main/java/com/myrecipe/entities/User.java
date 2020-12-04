@@ -11,31 +11,6 @@ import java.io.Serializable;
 @DynamicUpdate
 public class User implements IEntity, Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Column(name = "Id")
-    private Long id;
-
-    @Column(name = "Name")
-    private String name;
-
-    @Column(name = "Email")
-    private String email;
-
-    @Column(name = "FirstName")
-    private String firstName;
-
-    @Column(name = "LastName")
-    private String lastName;
-
-    @Column(name = "Password")
-    private String password;
-
-    public User() {
-
-    }
-
     public Long getId() {
         return id;
     }
@@ -83,4 +58,30 @@ public class User implements IEntity, Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Id
+    @GeneratedValue
+    @Column(name = "Id")
+    private Long id;
+
+    @Column(name = "Name")
+    private String name;
+
+    @Column(name = "Email")
+    private String email;
+
+    @Column(name = "FirstName")
+    private String firstName;
+
+    @Column(name = "LastName")
+    private String lastName;
+
+    @Column(name = "Password")
+    private String password;
+
+    public User() {
+
+    }
+
+
 }

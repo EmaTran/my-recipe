@@ -1,4 +1,4 @@
-<%--
+re<%--
   Created by IntelliJ IDEA.
   User: TakiNT
   Date: 11/22/2020
@@ -173,7 +173,7 @@
       <img src="./assets/store.jpg" alt="Store logo">
     </div>
 
-    <form method="POST" action="search">
+    <form method="POST" action="register">
 
     <div class="box">
       Register Form

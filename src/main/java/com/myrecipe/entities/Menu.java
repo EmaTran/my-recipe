@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Menu")
+@Table(name = "Menus")
 @DynamicUpdate
 public class Menu implements IEntity, Serializable {
 
@@ -16,44 +16,17 @@ public class Menu implements IEntity, Serializable {
     @Column(name = "Id")
     private int id;
 
-    @Column(name = "Menu_name")
-    private String menuName;
+    @Column(name = "CategoryId")
+    private int categoryId;
 
-    @Column(name = "menu_type_code")
-    private int menuTypeCode;
-
-    public int getMenuTypeCode() {
-        return menuTypeCode;
-    }
-
-    public void setMenuTypeCode(int menuTypeCode) {
-        this.menuTypeCode = menuTypeCode;
-    }
-
-    public int getCategory_id() {
-        return category_id;
-    }
-
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
-    }
-
-    public int getCourse_number() {
-        return course_number;
-    }
-
-    public void setCourse_number(int course_number) {
-        this.course_number = course_number;
-    }
-
-    @Column(name = "menu_decription")
+    @Column(name = "MenuDescription")
     private String menuDescription;
 
-    @Column(name = "category_id")
-    private int category_id;
+    @Column(name = "MenuName")
+    private String menuName;
 
-    @Column(name = "course_number")
-    private int course_number;
+    @Column(name = "CourseNumber")
+    private int courseNumber;
 
     public Menu() {
     }
@@ -66,12 +39,12 @@ public class Menu implements IEntity, Serializable {
         this.id = id;
     }
 
-    public String getMenuName() {
-        return menuName;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getMenuDescription() {
@@ -82,6 +55,19 @@ public class Menu implements IEntity, Serializable {
         this.menuDescription = menuDescription;
     }
 
+    public String getMenuName() {
+        return menuName;
+    }
 
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
+    }
 
+    public int getCourseNumber() {
+        return courseNumber;
+    }
+
+    public void setCourseNumber(int courseNumber) {
+        this.courseNumber = courseNumber;
+    }
 }

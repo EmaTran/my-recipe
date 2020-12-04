@@ -7,57 +7,67 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Recipe")
+@Table(name = "Menus")
 @DynamicUpdate
 public class Recipe implements IEntity, Serializable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @Column(name = "Id")
+    private int id;
 
-    @Column(name = "recipe_id")
-    private Long recipeId;
+    @Column(name = "CategoryId")
+    private int categoryId;
 
-    @Column(name = "recipe_id")
-    private String recipeID;
+    @Column(name = "MenuDescription")
+    private String menuDescription;
 
-    @Column(name = "total_steps")
-    private String totalSteps;
+    @Column(name = "MenuName")
+    private String menuName;
 
-    @Column(name = "serving_size")
-    private String servingSize;
+    @Column(name = "CourseNumber")
+    private int courseNumber;
 
-    public Long getRecipeId() {
-        return recipeId;
+    public Recipe() {
     }
 
-    public void setRecipeId(Long recipeId) {
-        this.recipeId = recipeId;
+    public int getId() {
+        return id;
     }
 
-    public String getRecipeID() {
-        return recipeID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setRecipeID(String recipeID) {
-        this.recipeID = recipeID;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public String getTotalSteps() {
-        return totalSteps;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public void setTotalSteps(String totalSteps) {
-        this.totalSteps = totalSteps;
+    public String getMenuDescription() {
+        return menuDescription;
     }
 
-    public String getServingSize() {
-        return servingSize;
+    public void setMenuDescription(String menuDescription) {
+        this.menuDescription = menuDescription;
     }
 
-    public void setServingSize(String servingSize) {
-        this.servingSize = servingSize;
+    public String getMenuName() {
+        return menuName;
     }
 
-    public Recipe(){
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
+    }
 
+    public int getCourseNumber() {
+        return courseNumber;
+    }
+
+    public void setCourseNumber(int courseNumber) {
+        this.courseNumber = courseNumber;
     }
 }

@@ -1,23 +1,37 @@
 package com.myrecipe.webUI.controllers;
 
+import com.myrecipe.business.abstrct.ICustomerService;
+import com.myrecipe.business.abstrct.IMenuService;
+import com.myrecipe.business.abstrct.IUserService;
+import com.myrecipe.business.concrete.managers.CustomerManager;
+import com.myrecipe.business.concrete.managers.MenuManager;
 import com.myrecipe.business.concrete.managers.UserManager;
+import com.myrecipe.entities.Menu;
 import com.myrecipe.entities.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 @RequestMapping
 public class UserController {
 
-    @Autowired
-    private LoginService loginService;
 
-    @RequestMapping(value = {"user/login", "/login"},method=RequestMethod.GET)
+    private IMenuService _menuService;
+    private IUserService _userService;
+
+    // TODO Dependency injection
+    public UserController() {
+        _menuService = new MenuManager();
+        _userService = new UserManager();
+    }
+
+    @RequestMapping(value = {"user/login", "/login"}, method = RequestMethod.GET)
     public String showLogin() {
         // Logic here
         //Suzuka
@@ -25,46 +39,46 @@ public class UserController {
     }
 
     @RequestMapping(value = {"user/login", "/login"}, method = RequestMethod.POST)
-   //Suzuka
+    //Suzuka
     public String handleUserLogin(ModelMap model,
                                   @RequestParam String userName,
                                   @RequestParam String password,
-                                  @RequestParam String subject){
-        if(!loginService.validateUser(userName, password)){
-            model.put("errorMessage", "Invalid Credentials");
-            return "user/login";
-        }
-
-        UserManager userManager = new UserManager();
-        userManager.getById(3);
-
-        model.put("name", userName);
-    //    model.addAttribute("todos", service.retrieveTodos(userName));
-        return "user/login";
+                                  @RequestParam String subject) {
+        return "OK";
     }
 
 
     @RequestMapping(value = {"user/search", "/search"}, method = RequestMethod.GET)
     public String showSearchPage(ModelMap model) {
         String user = (String) model.get("user");
-    //    model.addAttribute("" );
+        //    model.addAttribute("" );
         return "user/search";
     }
 
-    @RequestMapping(value = {"user/search", "/search"}, method = RequestMethod.POST)
-    public String ReturnSearchPage() {
+    @RequestMapping(value = {"user/search/", "/search"}, method = RequestMethod.POST)
+    public String ReturnSearchPage(Model model) {
         // Logic here
-
+        Menu data = _menuService.getById(1);
+        model.addAttribute("menu", data);
         //Kunal code
         return "user/search";
 
     }
 
-
     @RequestMapping(value = {"recipeList", "user/recipeList"}, method = RequestMethod.GET)
-    public String recipeListPage() {
+    public String recipeListPage(Model model) {
         // Logic here
         //Suzuka
+
+        Menu newMenu = new Menu();
+
+        newMenu.setMenuDescription("This new menu");
+        newMenu.setCourseNumber(1);
+        newMenu.setMenuName("Menu name");
+        newMenu.setCategoryId(1);
+
+        _menuService.add(newMenu);
+
         return "user/recipeList";
     }
 
@@ -76,7 +90,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value ={"/register", "/user/register"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/register", "/user/register"}, method = RequestMethod.GET)
     public String register() {
         // Logic here
         //Chau code
@@ -85,35 +99,33 @@ public class UserController {
 
     @RequestMapping(value = {"/register", "/user/register"}, method = RequestMethod.POST)
     public String returnRegister(
-//            ModelMap model,
-//            @RequestParam String first, @RequestParam String last,
-//                                 @RequestParam String email, @RequestParam int phone,
-//                                 @RequestParam String userName, @RequestParam String password
+            ModelMap model,
+            @RequestParam String first, @RequestParam String last,
+            @RequestParam String email, @RequestParam int phone,
+            @RequestParam String userName, @RequestParam String password
     ) {
         // Logic here
         //Suzuka
-//        User user = new User();
-//        user.setFirstName(first);
-//        user.setLastName(last);
-//        user.setEmail(email);
-//        user.setName(userName);
-//        user.setPassword(password);
-//
-//        model.put("fName", first);
-//        model.put("lName", last);
-//        model.put("email", email);
-//        model.put("userName", userName);
-//        model.put("password", password);
+        User user = new User();
+        user.setFirstName(model.get("fname").toString());
+        user.setLastName(model.get("lName").toString());
+        user.setEmail(model.get("email").toString());
+        user.setName(model.get("userName").toString());
+        user.setPassword(model.get("password").toString());
 
-        return "user/register";
+        _userService.add(user);
+        return "user/search";
     }
 
 
     @RequestMapping(value = {"/recipePage", "user/recipePage"}, method = RequestMethod.GET)
-    public String recipePage() {
+    public String recipePage(Model model) {
 
         // Logic here
-        //kunal code
+        // kunal code
+
+        List<Menu> menuData = _menuService.getAll();
+        model.addAttribute("menus", menuData);
 
         return "user/recipePage";
     }

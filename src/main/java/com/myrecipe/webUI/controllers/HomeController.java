@@ -42,11 +42,11 @@ public class HomeController {
     public @ResponseBody
     String ajaxcreateorupdate(HttpServletRequest request) {
 
-        Menu menu = new Menu();
-        menu.setCategory_id(Integer.parseInt(request.getParameter("categoryID")));
-        menu.setMenuDescription(request.getParameter("menuDescription"));
-        menu.setMenuName(request.getParameter("menuName"));
-        menu.setCourse_number(Integer.parseInt(request.getParameter("courseNumber")));
+//        Menu menu = new Menu();
+//        menu.setCategory_id(Integer.parseInt(request.getParameter("categoryID")));
+//        menu.setMenuDescription(request.getParameter("menuDescription"));
+//        menu.setMenuName(request.getParameter("menuName"));
+//        menu.setCourse_number(Integer.parseInt(request.getParameter("courseNumber")));
 
         String id = request.getParameter("id");
 

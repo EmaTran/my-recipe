@@ -1,6 +1,7 @@
 package com.myrecipe.core.data_access;
 
 import com.myrecipe.core.entities.IEntity;
+import com.myrecipe.entities.Menu;
 import org.jinq.orm.stream.JinqStream;
 
 import java.util.List;

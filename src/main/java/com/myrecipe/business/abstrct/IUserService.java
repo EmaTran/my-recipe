@@ -1,7 +1,7 @@
 package com.myrecipe.business.abstrct;
 
+
 import com.myrecipe.entities.Customer;
-import com.myrecipe.entities.Menu;
 import com.myrecipe.entities.User;
 
 import java.util.List;

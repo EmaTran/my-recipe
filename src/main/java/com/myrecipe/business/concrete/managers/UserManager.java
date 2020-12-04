@@ -1,10 +1,10 @@
 package com.myrecipe.business.concrete.managers;
 
-import com.myrecipe.business.abstrct.ICustomerService;
+
 import com.myrecipe.business.abstrct.IUserService;
-import com.myrecipe.data_access.abstrct.ICustomerDal;
+
 import com.myrecipe.data_access.abstrct.IUserDal;
-import com.myrecipe.data_access.concrete.hibernate.HibernateCustomerDal;
+
 import com.myrecipe.data_access.concrete.hibernate.HibernateUserDal;
 import com.myrecipe.entities.User;
 

@@ -2,6 +2,7 @@ package com.myrecipe.core.data_access.hibernate;
 
 import com.myrecipe.core.data_access.IEntityRepository;
 import com.myrecipe.core.entities.IEntity;
+import com.myrecipe.entities.Menu;
 import org.jinq.orm.stream.JinqStream;
 
 import javax.persistence.EntityManager;
