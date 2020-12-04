@@ -6,8 +6,17 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-
-
+import com.myrecipe.entities.Customer;
+import com.myrecipe.entities.Menu;
+import com.myrecipe.entities.MenuTemp;
+import com.myrecipe.entities.Menu_Recipe;
+import com.myrecipe.entities.Recipe;
+import com.myrecipe.entities.Ref_Menu_Type;
+import com.myrecipe.entities.User;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil {
 
@@ -25,13 +34,18 @@ public class HibernateUtil {
             // Create the SessionFactory from hibernate.cfg.xml
             Configuration configuration = new Configuration();
             configuration.configure("hibernate.cfg.xml");
+            configuration.addAnnotatedClass(Customer.class);
+            configuration.addAnnotatedClass(Menu.class);
+            configuration.addAnnotatedClass(Menu_Recipe.class);
+            configuration.addAnnotatedClass(Recipe.class);
+            configuration.addAnnotatedClass(Ref_Menu_Type.class);
+            configuration.addAnnotatedClass(User.class);
             System.out.println("Hibernate Configuration loaded");
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
             System.out.println("Hibernate serviceRegistry created");
 
             SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-
             return sessionFactory;
         }
         catch (Throwable ex) {
@@ -61,6 +75,7 @@ public class HibernateUtil {
             throw new ExceptionInInitializerError(ex);
         }
     }
+
 
 //    private static SessionFactory buildSessionJavaConfigFactory() {
 //        try {
@@ -108,5 +123,6 @@ public class HibernateUtil {
 //        if(sessionJavaConfigFactory == null) sessionJavaConfigFactory = buildSessionJavaConfigFactory();
 //        return sessionJavaConfigFactory;
 //    }
+
 
 }

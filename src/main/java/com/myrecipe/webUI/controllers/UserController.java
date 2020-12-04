@@ -1,5 +1,6 @@
 package com.myrecipe.webUI.controllers;
 
+import com.myrecipe.business.concrete.managers.UserManager;
 import com.myrecipe.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +34,10 @@ public class UserController {
             model.put("errorMessage", "Invalid Credentials");
             return "user/login";
         }
+
+        UserManager userManager = new UserManager();
+        userManager.getById(3);
+
         model.put("name", userName);
     //    model.addAttribute("todos", service.retrieveTodos(userName));
         return "user/login";
