@@ -297,16 +297,16 @@
         </form>
         <form method="POST" action="myCart">
             <div class="form-group">
-                <button class="btn-blue">
-                    Go to My Cart
+                <button class="btn-blue" >
+                    Purchase Items
                 </button>
             </div>
         </form>
 
     </fieldset>
-    <c:forEach var="menu" items="${menus}">
-        <p>${menu.menuDescription}</p>
-    </c:forEach>
+<%--    <c:forEach var="menu" items="${menus}">--%>
+<%--        <p>${menu.menuDescription}</p>--%>
+<%--    </c:forEach>--%>
     <div class="clearfix"></div>
 </div>
 </body>
