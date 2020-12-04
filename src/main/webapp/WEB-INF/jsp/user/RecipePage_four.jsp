@@ -172,9 +172,8 @@
 <div class="container">
     <div class="header clearfix">
         <div class="w-20">
-            <div class="shop-logo small">
-                <img src="./assets/store.jpg" alt="Store logo">
-            </div>
+            <h1 style="color:blue">Real Canadian </h1>
+            <h1 style="color:red">Superstore </h1>
         </div>
         <div class="w-80">
             <input type="text" name="search" id="search" placeholder="Search">
@@ -300,7 +299,7 @@
         <div class="clearfix mt-20">
             <div class="w-20">
                 <label>
-                    <input type="checkbox" name="step5" id="step5"> Step 4:
+                    <input type="checkbox" name="step5" id="step5"> Step 5:
                 </label>
             </div>
             <div class="w-80">
@@ -311,7 +310,7 @@
         <div class="clearfix mt-20">
             <div class="w-20">
                 <label>
-                    <input type="checkbox" name="step6" id="step6"> Step 4:
+                    <input type="checkbox" name="step6" id="step6"> Step 6:
                 </label>
             </div>
             <div class="w-80">

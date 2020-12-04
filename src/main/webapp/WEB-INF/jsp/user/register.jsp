@@ -1,4 +1,4 @@
-re<%--
+<%--
   Created by IntelliJ IDEA.
   User: TakiNT
   Date: 11/22/2020
@@ -169,11 +169,11 @@ re<%--
 </head>
 <body>
   <div class="container">
-    <div class="shop-logo">
-      <img src="./assets/store.jpg" alt="Store logo">
-    </div>
+    <h1 style="color:blue">Real Canadian </h1>
+    <h1 style="color:red">Superstore </h1>
 
-    <form method="POST" action="registerUser">
+
+    <form method="POST" action="register">
 
     <div class="box">
       Register Form
@@ -191,25 +191,25 @@ re<%--
       <div class="form-group-inline clearfix">
         <label for="email"> Email </label>
         <div class="w-80">
-          <input type="email" required name="email" id="email">
+          <input type="email" required name="email" id="email" placeholder="Email">
         </div>
       </div>
 
       <div class="form-group-inline clearfix">
         <label for="number"> Telephone </label>
         <div class="w-80">
-          <input type="number" name="number" id="number">
+          <input type="number" name="number" id="number" placeholder="Phone Number">
         </div>
       </div>
 
       <div class="form-group">
         <label for="userName"> Username </label>
-        <input type="text" name="userName" id="userName" placeholder="johndoe">
+        <input type="text" name="userName" id="userName" placeholder="username">
       </div>
 
       <div class="form-group">
         <label for="password"> Password </label>
-        <input type="password" name="password" id="password" placeholder="******">
+        <input type="password" name="password" id="password" placeholder="Password">
       </div>
 
       <div class="form-group">

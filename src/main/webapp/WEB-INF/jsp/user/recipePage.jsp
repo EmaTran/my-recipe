@@ -175,9 +175,8 @@
 <div class="container">
     <div class="header clearfix">
         <div class="w-20">
-            <div class="shop-logo small">
-                <img src="./assets/store.jpg" alt="Store logo">
-            </div>
+            <h1 style="color:blue">Real Canadian </h1>
+            <h1 style="color:red">Superstore </h1>
         </div>
         <div class="w-80">
             <input type="text" name="search" id="search" placeholder="Search">

@@ -4,6 +4,8 @@ import com.myrecipe.core.entities.IEntity;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
@@ -64,6 +66,8 @@ public class User implements IEntity, Serializable {
     @Column(name = "Id")
     private Long id;
 
+    @NotEmpty
+    @Size(min=1, max=50)
     @Column(name = "Name")
     private String name;
 
@@ -76,6 +80,8 @@ public class User implements IEntity, Serializable {
     @Column(name = "LastName")
     private String lastName;
 
+    @NotEmpty
+    @Size(min=1, max=20)
     @Column(name = "Password")
     private String password;
 

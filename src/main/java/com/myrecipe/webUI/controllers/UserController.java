@@ -33,8 +33,6 @@ public class UserController {
 
     @RequestMapping(value = {"user/login", "/login"}, method = RequestMethod.GET)
     public String showLogin() {
-        // Logic here
-        //Suzuka
         return "user/login";
     }
 
@@ -92,31 +90,29 @@ public class UserController {
 
     @RequestMapping(value = {"/register", "/user/register"}, method = RequestMethod.GET)
     public String register() {
-        // Logic here
-        //Chau code
         return "user/register";
     }
 
     @RequestMapping(value = {"/registerUser", "/user/register"}, method = RequestMethod.POST)
     public String returnRegister(
 
-            @RequestParam(required = false, name = "fName") String fName,
-            @RequestParam(required = false, name = "lName") String lName,
-            @RequestParam(required = false, name = "email") String email,
-            @RequestParam(required = false, name = "password") String password,
-            @RequestParam(required = false, name = "userName") String userName
+//            @RequestParam(required = false, name = "fName") String fName,
+//            @RequestParam(required = false, name = "lName") String lName,
+//            @RequestParam(required = false, name = "email") String email,
+//            @RequestParam(required = false, name = "password") String password,
+//            @RequestParam(required = false, name = "userName") String userName
     ) {
-        // Logic here
-        //Suzuka
-        User user = new User();
-        System.out.println(fName);
-        user.setFirstName(fName);
-        user.setLastName(lName);
-        user.setEmail(email);
-        user.setName(userName);
-        user.setPassword(password);
-
-        _userService.add(user);
+//        // Logic here
+//        //Suzuka
+//        User user = new User();
+//        System.out.println(fName);
+//        user.setFirstName(fName);
+//        user.setLastName(lName);
+//        user.setEmail(email);
+//        user.setName(userName);
+//        user.setPassword(password);
+//
+//        _userService.add(user);
         return "user/search";
     }
 
@@ -139,15 +135,12 @@ public class UserController {
         // Logic here
         //kunal code
 
+        // create a method that will get the values of ingredients from database and pass them on to myCart page
         return "user/recipePage";
     }
 
     @RequestMapping(value = {"myCart", "user/myCart"}, method = RequestMethod.GET)
     public String myCart() {
-
-        // Logic here
-        //Aryan code
-
         return "user/myCart";
     }
 

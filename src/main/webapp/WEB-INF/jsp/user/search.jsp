@@ -21,32 +21,6 @@
         h1 {
             text-align: center;
         }
-        /*form {*/
-        /*    text-align: left;*/
-        /*    margin: auto;*/
-        /*    width: 30%;*/
-        /*    border-color: dimgray;*/
-        /*    color: dimgray;*/
-        /*    font-family: Arial, sans-serif;*/
-
-        /*}*/
-        /*input{*/
-        /*    width: 100%;*/
-        /*}*/
-        /*p {*/
-        /*    border-bottom-style: solid;*/
-        /*    border-color: lightblue;*/
-        /*}*/
-
-        /*button {*/
-        /*    background-color: darkblue;*/
-        /*    border-color: darkblue;*/
-        /*    color: white;*/
-        /*    border-radius: 5%;*/
-        /*    padding: 2% 5%;*/
-
-        /*}*/
-
 
         * {
             box-sizing: border-box;
@@ -205,13 +179,15 @@
 <div class="container">
     <div class="header clearfix">
         <div class="w-20">
-            <div class="shop-logo small">
-                <img src="${pageContext.request.contextPath}/resources/images/superstore.jpg" alt="Store logo">
-<%--                <img src="<c:url value="/resources/images/superstore.jpg" />" alt="Store logo" />--%>
-            </div>
+            <h1 style="color:blue">Real Canadian </h1>
+            <h1 style="color:red">Superstore </h1>
+        </div>
+        <div>
+            <h3>Welcome <c:out value="${login.userName}" /> !</h3>
         </div>
 
-    <form action="recipeList" method="POST">
+
+        <form action="recipeList" method="POST">
 
         <div class="form-group clearfix">
 <%--            <div class="w-80 text-center">--%>
@@ -219,7 +195,7 @@
 <%--            </div>--%>
             <div class="w-20">
                 <div class="form-group">
-                    <input type="text" name="findReceipe" id="findReceipe" placeholder="Find a Receipe">
+                    <input type="text" name="findRecipe" id="findRecipe" placeholder="Find a Recipe">
                 </div>
             </div>
         </div>

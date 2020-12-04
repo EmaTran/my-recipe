@@ -22,32 +22,6 @@
         h1 {
             text-align: center;
         }
-        /*form {*/
-        /*    text-align: left;*/
-        /*    margin: auto;*/
-        /*    width: 30%;*/
-        /*    border-color: dimgray;*/
-        /*    color: dimgray;*/
-        /*    font-family: Arial, sans-serif;*/
-
-        /*}*/
-        /*input{*/
-        /*    width: 100%;*/
-        /*}*/
-        /*p {*/
-        /*    border-bottom-style: solid;*/
-        /*    border-color: lightblue;*/
-        /*}*/
-
-        /*button {*/
-        /*    background-color: darkblue;*/
-        /*    border-color: darkblue;*/
-        /*    color: white;*/
-        /*    border-radius: 5%;*/
-        /*    padding: 2% 5%;*/
-        /*}*/
-
-    /*    */
 
         * {
             box-sizing: border-box;
@@ -196,9 +170,25 @@
             padding: 4px 8px;
             text-transform: uppercase;
         }
-
-
     </style>
+    <script>
+        function validate()
+        {
+            var name = document.form.name.value;
+            var password = document.form.password.value;
+
+            if (name == null || name === "")
+            {
+                alert("Username cannot be blank");
+                return false;
+            }
+            else if(password == null || password === "")
+            {
+                alert("Password cannot be blank");
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
 <div>
@@ -208,57 +198,24 @@
 
 <p><font color="red">${errorMessage}</font></p>
 
-<h1>Login Page</h1>
-
 <div class="container">
-    <form method="POST" action="login">
+    <h1 style="color:blue">Real Canadian </h1>
+    <h1 style="color:red">Superstore </h1>
 
-        <div class="shop-logo text-center">
-            <img src="./assets/store.png" alt="Store logo">
-        </div>
-
-<%--        <fieldset class="form-group">--%>
-<%--            <label><b>Sign In</b></label>--%>
-<%--            <br>--%>
-<%--            <p></p>--%>
-<%--            <br>--%>
-<%--            <label>Name:</label>--%>
-<%--            <br>--%>
-<%--            <input name="name" type="text" class="form-control" />--%>
-<%--            </br>--%>
-<%--            <br>--%>
-<%--            <label>Password:</label>--%>
-<%--            <br>--%>
-<%--            <input name="password" type="password" class="form-control"/>--%>
-<%--            <br>--%>
-<%--            <br>--%>
-<%--            <button name="subject" type="submit" value="signIn">Sign In</button>--%>
-<%--            <br>--%>
-<%--            <br>--%>
-<%--            <br>--%>
-<%--        </fieldset>--%>
-<%--    </form>--%>
-<%--    <form method="POST" action="register">--%>
-<%--        <fieldset >--%>
-<%--            <label>New User</label>--%>
-<%--            <p></p>--%>
-<%--            <button name="subject" type="submit" value="signUp">Sign Up</button>--%>
-<%--        </fieldset>--%>
-<%--    </form>--%>
 
     <div class="box">
-        Sign In///
+        Sign In
         <hr>
 
-        <form method="POST" action="login">
+        <form method="POST" action="login" onsubmit="return validate()">
             <div class="form-group">
                 <label for="name"> User Name: </label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Username">
+                <input type="text" required name="name" id="name" class="form-control" placeholder="Username">
             </div>
 
             <div class="form-group">
                 <label for="password"> Password: </label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="******">
+                <input type="password" required name="password" id="password" class="form-control" placeholder="Password">
             </div>
 
             <div class="form-group">
@@ -269,7 +226,7 @@
 
             <hr>
         </form>
-            <form method="GET" action="register">
+        <form method="POST" action="register">
             <div class="form-group">
                 New User
                 <button class="btn-blue">
@@ -278,6 +235,7 @@
             </div>
         </form>
     </div>
+</div>
 </div>
 
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>

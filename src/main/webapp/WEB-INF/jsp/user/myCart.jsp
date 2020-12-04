@@ -33,10 +33,11 @@
 </head>
 <body>
 <div class="container">
-  <img src="./logo.jpg" alt="Logo">
+  <h1 style="color:blue">Real Canadian </h1> <h1 style="color:red">Superstore </h1>
   <hr>
   <div class="border text-center">
-    <img src="https://via.placeholder.com/150" alt="Thank you">
+<%--    <img src="http://gph.is/2lDKqsX" alt="Thank you">--%>
+    <h3 style="color: powderblue">Thank You</h3>
     <div class="thank-you-msg">
       Your order has been placed and you will be notified by email.
     </div>
