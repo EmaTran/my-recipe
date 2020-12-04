@@ -298,8 +298,8 @@
         </div>
         <form method="POST" action="myCart">
             <div class="form-group">
-                <button class="btn-blue">
-                    Go to My Cart
+                <button class="btn-blue" >
+                    Purchase Items
                 </button>
             </div>
         </form>
