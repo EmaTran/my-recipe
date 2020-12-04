@@ -19,7 +19,6 @@ public class Recipe implements IEntity, Serializable {
     @Column(name = "recipe_id")
     private String recipeID;
 
-
     @Column(name = "total_steps")
     private String totalSteps;
 
@@ -61,5 +60,4 @@ public class Recipe implements IEntity, Serializable {
     public Recipe(){
 
     }
-
 }

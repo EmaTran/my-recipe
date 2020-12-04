@@ -215,7 +215,7 @@
     <form method="POST" action="login">
 
         <div class="shop-logo text-center">
-            <img src="store.jpg" alt="Store logooo">
+            <img alt="Store logo" src="store.jpg">
         </div>
 
         <%--        <fieldset class="form-group">--%>
@@ -254,12 +254,12 @@
             <form method="POST" action="login">
                 <div class="form-group">
                     <label for="name"> User Name: </label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="johndoe">
+                    <input type="text" required name="name" id="name" class="form-control" placeholder="johndoe">
                 </div>
 
                 <div class="form-group">
                     <label for="password"> Password: </label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="******">
+                    <input type="password" required name="password" id="password" class="form-control" placeholder="******">
                 </div>
 
                 <div class="form-group">

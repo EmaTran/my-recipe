@@ -192,7 +192,7 @@
         <div class="w-20">
           <label>
             <input type="checkbox" name="ingredient" id="ingredientA">
-              Ingredient A
+              Beef (in lbs)
           </label>
         </div>
         <div class="w-20">
@@ -204,7 +204,7 @@
         <div class="w-20">
           <label>
             <input type="checkbox" name="ingredient" id="ingredientB">
-              Long Name Ingredient B
+              Potatoes (in lbs)
           </label>
         </div>
         <div class="w-20">
@@ -216,7 +216,7 @@
         <div class="w-20">
           <label>
             <input type="checkbox" name="ingredient" id="ingredientC">
-              Ingredient C
+              Carrots ( in lbs)
           </label>
         </div>
         <div class="w-20">
@@ -228,11 +228,23 @@
         <div class="w-20">
           <label>
             <input type="checkbox" name="ingredient" id="ingredientD">
-              Ingredient D
+              Oil ( bottled 1L EACH )
           </label>
         </div>
         <div class="w-20">
           <input type="number" name="numberD" id="numberD">
+        </div>
+      </div>
+
+      <div class="clearfix mt-20">
+        <div class="w-20">
+          <label>
+            <input type="checkbox" name="ingredient" id="ingredientE">
+            Garlic Roasted Seasoning Pack ( 100 gms )
+          </label>
+        </div>
+        <div class="w-20">
+          <input type="number" name="numberD" id="numberE">
         </div>
       </div>
 
@@ -244,7 +256,7 @@
           </label>
         </div>
         <div class="w-80">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ut tempora repudiandae odio libero
+          Put salt and pepper on the beef/meat. Cover it with oila nd set in aside for 10 mins.
         </div>
       </div>
       <div class="clearfix mt-20">
@@ -254,7 +266,7 @@
           </label>
         </div>
         <div class="w-80">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ut tempora repudiandae odio libero
+          In the cooking tray add chopped carrots and pototoes and add seasoning, dazzle oil from the top. Bake at 250 degree for 15 mins.
         </div>
       </div>
       <div class="clearfix mt-20">
@@ -264,9 +276,29 @@
           </label>
         </div>
         <div class="w-80">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ut tempora repudiandae odio libero
+          Add the seasoned beef/meat on the cooking tray and bake at 300 degrees until its cooked.
         </div>
       </div>
+
+      <div class="clearfix mt-20">
+        <div class="w-20">
+          <label>
+            <input type="checkbox" name="step4" id="step4"> Step 4:
+          </label>
+        </div>
+        <div class="w-80">
+          Check the meat temp at 275 degrees and serve hot.
+        </div>
+      </div>
+
+      </form>
+      <form method="POST" action="myCart">
+        <div class="form-group">
+          <button class="btn-blue">
+            Go to My Cart
+          </button>
+        </div>
+      </form>
 
     </fieldset>
 

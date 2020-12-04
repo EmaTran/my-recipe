@@ -171,7 +171,7 @@
     <div class="header clearfix">
       <div class="w-20">
         <div class="shop-logo small">
-          <img src="store.jpg">
+          <img src=./assets/store.jpg alt="Store logo">
         </div>
       </div>
       <div class="w-80">
@@ -185,7 +185,7 @@
       <div class="clearfix">
         <div class="w-50">
           <div class="box">
-            <div class="w-50">Pickup</div>
+            <div class="w-50">Selected items</div>
             <div class="w-50 text-center">3 items</div>
             <hr>
 
@@ -197,7 +197,7 @@
                 </div>
                 <label class="w-20">Milk</label>
                 <div class="w-20">
-                  <input type="number" name="milkCount" id="milkCount" class="mt-0" value="1">
+                  <input type="number" name="milkCount" id="milkCount1" class="mt-0" value="1">
                 </div>
                 <label class="w-20">$5.19</label>
               </div>
@@ -234,6 +234,7 @@
           <div class="box">
             Order Summary
             <hr>
+            <
 
             <ul>
               <li>Item 1</li>
@@ -243,7 +244,7 @@
             <hr>
 
             <button class="btn-blue">
-              Check out
+              Purchase
             </button>
           </div>
         </div>

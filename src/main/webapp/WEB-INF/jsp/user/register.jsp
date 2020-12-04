@@ -181,17 +181,17 @@
 
       <div class="form-group-inline clearfix">
         <div class="w-50">
-          <input type="text" name="fName" id="fName" placeholder="First name">
+          <input type="text" required name="fName" id="fName" placeholder="First name">
         </div>
         <div class="w-50">
-          <input type="text" name="lName" id="lName" placeholder="Last name">
+          <input type="text" required name="lName" id="lName" placeholder="Last name">
         </div>
       </div>
 
       <div class="form-group-inline clearfix">
         <label for="email"> Email </label>
         <div class="w-80">
-          <input type="email" name="email" id="email">
+          <input type="email" required name="email" id="email">
         </div>
       </div>
 

@@ -140,4 +140,65 @@ public class UserController {
         return "user/myCart";
     }
 
+
+    @RequestMapping(value = {"/RecipePage_second", "user/RecipePage_second"}, method = RequestMethod.GET)
+    public String RecipePage_second() {
+
+        return "user/RecipePage_second";
+    }
+
+    @RequestMapping(value = {"/RecipePage_second", "user/RecipePage_Second"}, method = RequestMethod.POST)
+    public String returnRecipePage_second() {
+
+        // Logic here
+        //kunal code
+
+        return "user/RecipePage_second";
+    }
+
+    @RequestMapping(value = {"/RecipePage_third", "user/RecipePage_third"}, method = RequestMethod.GET)
+    public String RecipePage_third() {
+
+        return "user/RecipePage_third";
+    }
+
+    @RequestMapping(value = {"/RecipePage_third", "user/RecipePage_third"}, method = RequestMethod.POST)
+    public String returnRecipePage_third() {
+
+        // Logic here
+        //kunal code
+
+        return "user/RecipePage_third";
+    }
+
+    @RequestMapping(value = {"/RecipePage_four", "user/RecipePage_four"}, method = RequestMethod.GET)
+    public String RecipePage_four() {
+
+        return "user/RecipePage_four";
+    }
+
+    @RequestMapping(value = {"/RecipePage_four", "user/RecipePage_four"}, method = RequestMethod.POST)
+    public String returnRecipePage_four() {
+
+        // Logic here
+        //kunal code
+
+        return "user/RecipePage_four";
+    }
+
+    @RequestMapping(value = {"/RecipePage_five", "user/RecipePage_five"}, method = RequestMethod.GET)
+    public String RecipePage_five() {
+
+        return "user/RecipePage_five";
+    }
+
+    @RequestMapping(value = {"/RecipePage_five", "user/RecipePage_five"}, method = RequestMethod.POST)
+    public String returnRecipePage_five() {
+
+        // Logic here
+        //kunal code
+
+        return "user/RecipePage_five";
+    }
+
 }

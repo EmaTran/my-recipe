@@ -30,19 +30,22 @@
 
     <div class = clearfix>
 
+        <h1>Select any Recipe</h1>
+        <br>
+        <img src="store.jpg" alt="Roast Beef with Roasted Potatoes and Carrots" style="width:200px;height:300px;">
         <a href="recipePage">Roast Beef with Roasted Potatoes and Carrots</a>
         <br>
         <br>
-        <a href="">Beef and Cheddar Casserole</a>
+        <a href="RecipePage_second">Beef and Cheddar Casserole</a>
         <br>
         <br>
-        <a href="">Beef Burger</a>
+        <a href="RecipePage_third">Beef Burger</a>
         <br>
         <br>
-        <a href="">Beef Stew</a>
+        <a href="RecipePage_four">Beef Stew</a>
         <br>
         <br>
-        <a href="">Beef Stroganoff</a>
+        <a href="RecipePage_five">Beef Stroganoff</a>
 
     </div>
 
