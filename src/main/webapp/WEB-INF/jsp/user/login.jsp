@@ -270,7 +270,7 @@
 
                 <hr>
             </form>
-            <form method="POST" action="register">
+            <form method="GET" action="register.jsp">
                 <div class="form-group">
                     New User
                     <button class="btn-blue">

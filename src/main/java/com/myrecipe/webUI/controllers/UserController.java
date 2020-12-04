@@ -97,21 +97,24 @@ public class UserController {
         return "user/register";
     }
 
-    @RequestMapping(value = {"/register", "/user/register"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/registerUser", "/user/register"}, method = RequestMethod.POST)
     public String returnRegister(
-            ModelMap model,
-            @RequestParam String first, @RequestParam String last,
-            @RequestParam String email, @RequestParam int phone,
-            @RequestParam String userName, @RequestParam String password
+
+            @RequestParam(required = false, name = "fName") String fName,
+            @RequestParam(required = false, name = "lName") String lName,
+            @RequestParam(required = false, name = "email") String email,
+            @RequestParam(required = false, name = "password") String password,
+            @RequestParam(required = false, name = "userName") String userName
     ) {
         // Logic here
         //Suzuka
         User user = new User();
-        user.setFirstName(model.get("fname").toString());
-        user.setLastName(model.get("lName").toString());
-        user.setEmail(model.get("email").toString());
-        user.setName(model.get("userName").toString());
-        user.setPassword(model.get("password").toString());
+        System.out.println(fName);
+        user.setFirstName(fName);
+        user.setLastName(lName);
+        user.setEmail(email);
+        user.setName(userName);
+        user.setPassword(password);
 
         _userService.add(user);
         return "user/search";

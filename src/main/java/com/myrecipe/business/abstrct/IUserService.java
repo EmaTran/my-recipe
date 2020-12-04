@@ -3,6 +3,7 @@ package com.myrecipe.business.abstrct;
 
 import com.myrecipe.entities.Customer;
 import com.myrecipe.entities.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

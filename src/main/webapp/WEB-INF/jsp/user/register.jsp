@@ -173,7 +173,7 @@ re<%--
       <img src="./assets/store.jpg" alt="Store logo">
     </div>
 
-    <form method="POST" action="register">
+    <form method="POST" action="registerUser">
 
     <div class="box">
       Register Form

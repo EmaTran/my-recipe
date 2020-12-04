@@ -247,7 +247,7 @@
 <%--    </form>--%>
 
     <div class="box">
-        Sign In
+        Sign In///
         <hr>
 
         <form method="POST" action="login">
@@ -269,7 +269,7 @@
 
             <hr>
         </form>
-            <form method="POST" action="register">
+            <form method="GET" action="register">
             <div class="form-group">
                 New User
                 <button class="btn-blue">
