@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Array;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -85,17 +87,14 @@ public class UserController {
         user.setPassword(password);
         _userService.add(user);
 
-        return "redirect:search";
+        return "redirect:/home/";
     }
-
-
     @RequestMapping(value = {"recipePage", "user/recipePage"}, params = {"id"})
     public String recipePage(@RequestParam(value = "id") int id, Model model) {
         Recipe data = _recipeService.getById(id);
         model.addAttribute("recipe", data);
         return "user/recipePage";
     }
-
     @RequestMapping(value = {"recipePage", "user/recipePage"}, method = RequestMethod.POST)
     public String returnRecipePage() {
         return "redirect:myCart";

@@ -5,8 +5,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "Recipes")
@@ -27,17 +26,27 @@ public class Recipe implements IEntity, Serializable {
     @Column(name = "TotalStep")
     private int totalStep;
 
-    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name="RecipeId")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "RecipeId")
     private Set<RecipeDetail> recipeDetails;
 
-    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name="RecipeId")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "RecipeId")
     private Set<Steps> recipeSteps;
+
+    @Transient
+    private List<Steps> displaySteps;
 
     public Recipe() {
         recipeDetails = new HashSet<>();
         recipeSteps = new HashSet<>();
+        displaySteps = new ArrayList<>();
+    }
+
+    public List<Steps> getDisplaySteps() {
+        displaySteps = new ArrayList<>(recipeSteps);
+        Collections.sort(displaySteps, Comparator.comparing(Steps::getStepName));
+        return displaySteps;
     }
 
     public Set<RecipeDetail> getRecipeDetails() {

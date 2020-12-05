@@ -8,14 +8,14 @@
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>com.myrecipe.entities.Customer</class>
+
         <class>com.myrecipe.entities.Menu</class>
         <class>com.myrecipe.entities.User</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:sqlserver://localhost\MSSQLSERVER17;database=MyRecipe"/>
+                      value="jdbc:sqlserver://localhost;database=MyRecipe"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
             <property name="javax.persistence.jdbc.password" value="123"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>

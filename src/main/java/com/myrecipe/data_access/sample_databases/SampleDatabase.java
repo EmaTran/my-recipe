@@ -1,10 +1,8 @@
 package com.myrecipe.data_access.sample_databases;
 
 import com.github.javafaker.Faker;
-import com.myrecipe.business.abstrct.ICustomerService;
 import com.myrecipe.business.abstrct.IRecipeService;
 import com.myrecipe.business.abstrct.IUserService;
-import com.myrecipe.business.concrete.managers.CustomerManager;
 import com.myrecipe.business.concrete.managers.RecipeManager;
 import com.myrecipe.business.concrete.managers.UserManager;
 import com.myrecipe.entities.*;
@@ -16,7 +14,7 @@ public class SampleDatabase {
 
     public static void initializeDatabase() {
 
-        ICustomerService customerService = new CustomerManager();
+
         IUserService userService = new UserManager();
         IRecipeService recipeService = new RecipeManager();
 
@@ -24,16 +22,6 @@ public class SampleDatabase {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         for (int i = 0; i < 3; i++) {
-
-            // Adding Customers
-            Customer customer = new Customer();
-            customer.setSalary(faker.number().numberBetween(1000, 3000));
-            customer.setFullname(faker.name().fullName());
-            customer.setEmail(faker.internet().emailAddress());
-            customer.setPhoneNumber(faker.numerify("###-###-####"));
-            customer.setDateOfBirth(dateFormat.format(faker.date().birthday()));
-            customerService.add(customer);
-
             // Adding Users
             User newUser = new User();
             newUser.setEmail(faker.internet().emailAddress());

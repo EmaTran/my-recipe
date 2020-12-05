@@ -35,7 +35,7 @@
 
                             <h4 class="heading"> Instructions</h4>
                             <hr/>
-                            <c:forEach var="step" items="${recipe.recipeSteps}">
+                            <c:forEach var="step" items="${recipe.displaySteps}">
                                 <div class="clearfix mt-20">
                                     <div class="w-20">
                                         <label>
