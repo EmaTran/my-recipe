@@ -13,6 +13,8 @@
     <mvc:resources mapping="/webjars/**" location="/webjars/">
         <mvc:resource-chain resource-cache="true"/>
     </mvc:resources>
+    <mvc:resources mapping="/images/**" location="/images/"/>
+    <mvc:resources mapping="/styles/**" location="/styles/"/>
     <mvc:annotation-driven/>
     <context:component-scan base-package="com.myrecipe"/>
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">

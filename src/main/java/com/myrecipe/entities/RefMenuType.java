@@ -7,25 +7,24 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Ref_Menu_Type")
+@Table(name = "RefMenuTypes")
 @DynamicUpdate
-public class Ref_Menu_Type implements IEntity, Serializable {
+public class RefMenuType implements IEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "menu_type_code")
-    private Long menu_type_code;
+    @Column(name = "MenuTypeCode")
+    private Long menuTypeCode;
 
-
-    @Column(name = "menu_Description")
+    @Column(name = "MenuDescription")
     private String menuDescription;
 
 
-    public Long getMenu_type_code() {
-        return menu_type_code;
+    public Long getMenuTypeCode() {
+        return menuTypeCode;
     }
 
-    public void setMenu_type_code(Long menu_type_code) {
-        this.menu_type_code = menu_type_code;
+    public void setMenuTypeCode(Long menuTypeCode) {
+        this.menuTypeCode = menuTypeCode;
     }
 
     public String getMenuDescription() {
@@ -36,7 +35,7 @@ public class Ref_Menu_Type implements IEntity, Serializable {
         this.menuDescription = menuDescription;
     }
 
-    public Ref_Menu_Type() {
+    public RefMenuType() {
 
     }
 

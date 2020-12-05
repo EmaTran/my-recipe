@@ -1,53 +1,28 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: TakiNT
-  Date: 11/22/2020
-  Time: 12:21 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You</title>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-  <style>
+<t:layoutpage>
+    <jsp:attribute name="title">Recipe List</jsp:attribute>
 
-    .container {
-      margin: 16px auto 0;
-      padding: 0 16px;
-      width: 40%;
-    }
-    .text-center {
-      text-align: center;
-    }
-    .border {
-      border: 1px solid #ddd;
-      padding: 48px 16px;
-    }
-    .thank-you-msg {
-      margin-top: 16px;
-    }
-    h1 {
-        text-align: center;
-    }
-  </style>
-</head>
-<body>
-<div class="container">
-    <h1 style="font-family: Arial Black"><span style="color:blue">REAL CANADIAN</span>
-        <br>
-        <span style="color:red">SUPERSTORE</span></h1>
-  <hr>
-  <div class="border text-center">
-<%--    <img src="http://gph.is/2lDKqsX" alt="Thank you">--%>
-    <h3 style="color: royalblue">Thank You</h3>
-    <div class="thank-you-msg">
-      Your order has been placed and you will be notified by email.
-    </div>
-  </div>
-</div>
-</body>
-</html>
+    <jsp:body>
+        <div class="container mt-5">
+            <h1><img src="${pageContext.request.contextPath}/images/store.jpg"/></h1>
+            <div class="card">
+                <div class="card-header bg-white font-weight-bold">
+                    <div class="d-flex justify-content-between">
+                        <h3 style="color: powderblue">Thank You</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="thank-you-msg">
+                        Your order has been placed and you will be notified by email.
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <img width="100%" src="${pageContext.request.contextPath}/images/store.png"/>
+            </div>
+        </div>
+    </jsp:body>
+</t:layoutpage>

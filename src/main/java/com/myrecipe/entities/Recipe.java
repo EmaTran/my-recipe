@@ -5,9 +5,11 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "Menus")
+@Table(name = "Recipes")
 @DynamicUpdate
 public class Recipe implements IEntity, Serializable {
 
@@ -16,19 +18,34 @@ public class Recipe implements IEntity, Serializable {
     @Column(name = "Id")
     private int id;
 
-    @Column(name = "CategoryId")
-    private int categoryId;
+    @Column(name = "ServicingSize")
+    private String servicingSize;
 
-    @Column(name = "MenuDescription")
-    private String menuDescription;
+    @Column(name = "RecipeName")
+    private String recipeName;
 
-    @Column(name = "MenuName")
-    private String menuName;
+    @Column(name = "TotalStep")
+    private int totalStep;
 
-    @Column(name = "CourseNumber")
-    private int courseNumber;
+    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="RecipeId")
+    private Set<RecipeDetail> recipeDetails;
+
+    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="RecipeId")
+    private Set<Steps> recipeSteps;
 
     public Recipe() {
+        recipeDetails = new HashSet<>();
+        recipeSteps = new HashSet<>();
+    }
+
+    public Set<RecipeDetail> getRecipeDetails() {
+        return recipeDetails;
+    }
+
+    public Set<Steps> getRecipeSteps() {
+        return recipeSteps;
     }
 
     public int getId() {
@@ -39,35 +56,27 @@ public class Recipe implements IEntity, Serializable {
         this.id = id;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public String getServicingSize() {
+        return servicingSize;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setServicingSize(String servicingSize) {
+        this.servicingSize = servicingSize;
     }
 
-    public String getMenuDescription() {
-        return menuDescription;
+    public String getRecipeName() {
+        return recipeName;
     }
 
-    public void setMenuDescription(String menuDescription) {
-        this.menuDescription = menuDescription;
+    public void setRecipeName(String recipeName) {
+        this.recipeName = recipeName;
     }
 
-    public String getMenuName() {
-        return menuName;
+    public int getTotalStep() {
+        return totalStep;
     }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
-    }
-
-    public int getCourseNumber() {
-        return courseNumber;
-    }
-
-    public void setCourseNumber(int courseNumber) {
-        this.courseNumber = courseNumber;
+    public void setTotalStep(int totalStep) {
+        this.totalStep = totalStep;
     }
 }

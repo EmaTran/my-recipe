@@ -12,21 +12,21 @@ import java.io.Serializable;
 public class Steps implements IEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Column(name = "step_ID")
+    @Column(name = "StepID")
     private Long stepID;
 
+    @Column(name = "RecipeId")
+    private String recipeId;
 
-    @Column(name = "step_name")
+    @Column(name = "StepName")
     private String stepName;
 
-    @Column(name = "step_instruction")
+    @Column(name = "StepInstruction")
     private String stepInstruction;
 
 
-    @Column(name = "step_time")
+    @Column(name = "StepTime")
     private double stepTime;
-
 
     public Long getStepID() {
         return stepID;
@@ -59,6 +59,4 @@ public class Steps implements IEntity, Serializable {
     public void setStepTime(double stepTime) {
         this.stepTime = stepTime;
     }
-
-
 }

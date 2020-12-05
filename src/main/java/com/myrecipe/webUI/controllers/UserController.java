@@ -1,12 +1,13 @@
 package com.myrecipe.webUI.controllers;
 
-import com.myrecipe.business.abstrct.ICustomerService;
 import com.myrecipe.business.abstrct.IMenuService;
+import com.myrecipe.business.abstrct.IRecipeService;
 import com.myrecipe.business.abstrct.IUserService;
-import com.myrecipe.business.concrete.managers.CustomerManager;
 import com.myrecipe.business.concrete.managers.MenuManager;
+import com.myrecipe.business.concrete.managers.RecipeManager;
 import com.myrecipe.business.concrete.managers.UserManager;
 import com.myrecipe.entities.Menu;
+import com.myrecipe.entities.Recipe;
 import com.myrecipe.entities.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -22,72 +24,35 @@ import java.util.List;
 public class UserController {
 
 
-    private IMenuService _menuService;
-    private IUserService _userService;
-    private LoginService loginService;
+    private final IMenuService _menuService;
+    private final IRecipeService _recipeService;
+    private final IUserService _userService;
 
-    // TODO Dependency injection
     public UserController() {
         _menuService = new MenuManager();
+        _recipeService = new RecipeManager();
         _userService = new UserManager();
     }
 
-    @RequestMapping(value = {"user/login", "/login"}, method = RequestMethod.GET)
-    public String showLogin() {
-        return "user/login";
-    }
-
-    @RequestMapping(value = {"user/login", "/login"}, method = RequestMethod.POST)
-    //Suzuka
-    public String handleUserLogin(ModelMap model,
-                                  @RequestParam String name,
-                                  @RequestParam String password) {
-
-        if(!loginService.validateUser(name, password)){
-            model.put("errorMessage", "Invalid Entry, please enter again.");
-            return "user/login";
-        }
-
-        UserManager userManager = new UserManager();
-        userManager.getById(3);
-
-        model.put("name", name);
-        model.put("password", password);
-
-        return "user/search";
-    }
-
-
     @RequestMapping(value = {"user/search", "/search"}, method = RequestMethod.GET)
-    public String showSearchPage(ModelMap model) {
-        String user = (String) model.get("user");
-        //    model.addAttribute("" );
+    public String showSearchPage(ModelMap model, HttpServletRequest request) {
+        model.addAttribute("userName", request.getSession().getAttribute("USER_NAME"));
         return "user/search";
     }
 
     @RequestMapping(value = {"user/search/", "/search"}, method = RequestMethod.POST)
     public String ReturnSearchPage(Model model) {
-        // Logic here
         Menu data = _menuService.getById(1);
         model.addAttribute("menu", data);
-        //Kunal code
         return "user/search";
 
     }
 
     @RequestMapping(value = {"recipeList", "user/recipeList"}, method = RequestMethod.GET)
     public String recipeListPage(Model model) {
-        // Logic here
-        //Suzuka
 
-        Menu newMenu = new Menu();
-
-        newMenu.setMenuDescription("This new menu");
-        newMenu.setCourseNumber(1);
-        newMenu.setMenuName("Menu name");
-        newMenu.setCategoryId(1);
-
-        _menuService.add(newMenu);
+        List<Recipe> recipeData = _recipeService.getAll();
+        model.addAttribute("recipes", recipeData);
 
         return "user/recipeList";
     }
@@ -95,8 +60,7 @@ public class UserController {
     @RequestMapping(value = {"recipeList", "user/recipeList"}, method = RequestMethod.POST)
     public String returnRecipeListPage() {
         // Logic here
-        //Suzuka
-        return "user/recipeList";
+        return "redirect:recipeList";
     }
 
 
@@ -107,48 +71,34 @@ public class UserController {
 
     @RequestMapping(value = {"/registerUser", "/user/register"}, method = RequestMethod.POST)
     public String returnRegister(
-
-            @RequestParam(required = false, name = "fName") String fName,
-            @RequestParam(required = false, name = "lName") String lName,
-            @RequestParam(required = false, name = "email") String email,
-            @RequestParam(required = false, name = "password") String password,
-            @RequestParam(required = false, name = "userName") String userName
+            @RequestParam(name = "fName") String fName,
+            @RequestParam(name = "lName") String lName,
+            @RequestParam(name = "email") String email,
+            @RequestParam(name = "password") String password,
+            @RequestParam(name = "userName") String userName
     ) {
-        // Logic here
-        //Suzuka
         User user = new User();
-        System.out.println(fName);
         user.setFirstName(fName);
         user.setLastName(lName);
         user.setEmail(email);
         user.setName(userName);
         user.setPassword(password);
-
         _userService.add(user);
-        return "user/search";
+
+        return "redirect:search";
     }
 
 
-    @RequestMapping(value = {"/recipePage", "user/recipePage"}, method = RequestMethod.GET)
-    public String recipePage(Model model) {
-
-        // Logic here
-        // kunal code
-
-        List<Menu> menuData = _menuService.getAll();
-        model.addAttribute("menus", menuData);
-
+    @RequestMapping(value = {"recipePage", "user/recipePage"}, params = {"id"})
+    public String recipePage(@RequestParam(value = "id") int id, Model model) {
+        Recipe data = _recipeService.getById(id);
+        model.addAttribute("recipe", data);
         return "user/recipePage";
     }
 
-    @RequestMapping(value = {"/recipePage", "user/recipePage"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"recipePage", "user/recipePage"}, method = RequestMethod.POST)
     public String returnRecipePage() {
-
-        // Logic here
-        //kunal code
-
-        // create a method that will get the values of ingredients from database and pass them on to myCart page
-        return "user/recipePage";
+        return "redirect:myCart";
     }
 
     @RequestMapping(value = {"myCart", "user/myCart"}, method = RequestMethod.GET)
