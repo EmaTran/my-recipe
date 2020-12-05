@@ -19,6 +19,10 @@
         h1 {
             text-align: center;
         }
+        h2{
+            text-align: center;
+            font-family: "Arial Black", sans-serif;
+        }
 
         .container {
             padding: 15px 24px;
@@ -168,16 +172,18 @@
 
         a {
             text-decoration: none;
+            font-family: Arial;
         }
 
     </style>
 </head>
 
-<h1>Recipes</h1>
-
 <body>
 
 <div class="container">
+    <h1 style="font-family: Arial Black"><span style="color:blue">REAL CANADIAN</span>
+        <br>
+        <span style="color:red">SUPERSTORE</span></h1>
     <div class="clearfix">
         <div class="w-50">
             <div class="form-group">
@@ -185,16 +191,10 @@
             </div>
         </div>
     </div>
-
-    <br>
     <br>
 
-    <h1 style="color:blue">Real Canadian </h1>
-    <h1 style="color:red">Superstore </h1>
     <div class = clearfix>
-
-
-        <h1>Select any Recipe</h1>
+        <h2 style="color: royalblue">Select any Recipe</h2>
         <br>
 <%--        <img src="store.jpg" alt="Roast Beef with Roasted Potatoes and Carrots" style="width:200px;height:300px;">--%>
         <a href="recipePage">Roast Beef with Roasted Potatoes and Carrots</a>

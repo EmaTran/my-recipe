@@ -167,6 +167,10 @@
             padding: 4px 8px;
             text-transform: uppercase;
         }
+        legend{
+            font-size: 20px;
+            font-family: "Arial Black", sans-serif;
+        }
     </style>
 
     <%--  <link rel="stylesheet" href="./styles/index.css">--%>
@@ -174,10 +178,9 @@
 <body>
 <div class="container">
     <div class="header clearfix">
-        <div class="w-20">
-            <h1 style="color:blue">Real Canadian </h1>
-            <h1 style="color:red">Superstore </h1>
-        </div>
+            <h1 style="font-family: Arial Black"><span style="color:blue">REAL CANADIAN</span>
+                <br>
+                <span style="color:red">SUPERSTORE</span></h1>
         <div class="w-80">
             <input type="text" name="search" id="search" placeholder="Search">
         </div>
@@ -186,7 +189,7 @@
     <hr>
 
     <fieldset>
-        <legend>Recipe</legend>
+        <legend style="color: royalblue">Roast Beef with Roasted Potatoes and Carrots</legend>
 
         <div class="heading"> Ingredients</div>
         <div class="clearfix mt-20">

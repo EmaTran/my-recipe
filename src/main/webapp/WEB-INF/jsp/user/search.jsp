@@ -21,6 +21,10 @@
         h1 {
             text-align: center;
         }
+        h2{
+            text-align: center;
+            font-family: "Arial Black", sans-serif;
+        }
 
         * {
             box-sizing: border-box;
@@ -172,18 +176,19 @@
 
     </style>
 </head>
-<h1>Search Recipe</h1>
 
 <body>
 
 <div class="container">
+    <h1 style="font-family: Arial Black"><span style="color:blue">REAL CANADIAN</span>
+        <br>
+        <span style="color:red">SUPERSTORE</span></h1>
     <div class="header clearfix">
         <div class="w-20">
-            <h1 style="color:blue">Real Canadian </h1>
-            <h1 style="color:red">Superstore </h1>
+
         </div>
         <div>
-            <h3>Welcome <c:out value="${login.userName}" /> !</h3>
+            <h2 style="color: royalblue"> Welcome <c:out value="${login.userName}" /> !</h2>
         </div>
 
 

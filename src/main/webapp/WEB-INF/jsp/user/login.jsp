@@ -199,7 +199,9 @@
 <p><font color="red">${errorMessage}</font></p>
 
 <div class="container">
-    <h1 style="color:blue">Real Canadian </h1> <h1 style="color:red">Superstore </h1>
+    <h1 style="font-family: Arial Black"><span style="color:blue">REAL CANADIAN</span>
+        <br>
+        <span style="color:red">SUPERSTORE</span></h1>
 
 
     <div class="box">

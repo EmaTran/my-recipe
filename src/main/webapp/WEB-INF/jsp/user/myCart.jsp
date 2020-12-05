@@ -14,6 +14,7 @@
   <title>Thank You</title>
 
   <style>
+
     .container {
       margin: 16px auto 0;
       padding: 0 16px;
@@ -29,15 +30,20 @@
     .thank-you-msg {
       margin-top: 16px;
     }
+    h1 {
+        text-align: center;
+    }
   </style>
 </head>
 <body>
 <div class="container">
-  <h1 style="color:blue">Real Canadian </h1> <h1 style="color:red">Superstore </h1>
+    <h1 style="font-family: Arial Black"><span style="color:blue">REAL CANADIAN</span>
+        <br>
+        <span style="color:red">SUPERSTORE</span></h1>
   <hr>
   <div class="border text-center">
 <%--    <img src="http://gph.is/2lDKqsX" alt="Thank you">--%>
-    <h3 style="color: powderblue">Thank You</h3>
+    <h3 style="color: royalblue">Thank You</h3>
     <div class="thank-you-msg">
       Your order has been placed and you will be notified by email.
     </div>

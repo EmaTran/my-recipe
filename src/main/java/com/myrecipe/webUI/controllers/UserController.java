@@ -24,6 +24,7 @@ public class UserController {
 
     private IMenuService _menuService;
     private IUserService _userService;
+    private LoginService loginService;
 
     // TODO Dependency injection
     public UserController() {
@@ -39,10 +40,21 @@ public class UserController {
     @RequestMapping(value = {"user/login", "/login"}, method = RequestMethod.POST)
     //Suzuka
     public String handleUserLogin(ModelMap model,
-                                  @RequestParam String userName,
-                                  @RequestParam String password,
-                                  @RequestParam String subject) {
-        return "OK";
+                                  @RequestParam String name,
+                                  @RequestParam String password) {
+
+        if(!loginService.validateUser(name, password)){
+            model.put("errorMessage", "Invalid Entry, please enter again.");
+            return "user/login";
+        }
+
+        UserManager userManager = new UserManager();
+        userManager.getById(3);
+
+        model.put("name", name);
+        model.put("password", password);
+
+        return "user/search";
     }
 
 
@@ -96,23 +108,23 @@ public class UserController {
     @RequestMapping(value = {"/registerUser", "/user/register"}, method = RequestMethod.POST)
     public String returnRegister(
 
-//            @RequestParam(required = false, name = "fName") String fName,
-//            @RequestParam(required = false, name = "lName") String lName,
-//            @RequestParam(required = false, name = "email") String email,
-//            @RequestParam(required = false, name = "password") String password,
-//            @RequestParam(required = false, name = "userName") String userName
+            @RequestParam(required = false, name = "fName") String fName,
+            @RequestParam(required = false, name = "lName") String lName,
+            @RequestParam(required = false, name = "email") String email,
+            @RequestParam(required = false, name = "password") String password,
+            @RequestParam(required = false, name = "userName") String userName
     ) {
-//        // Logic here
-//        //Suzuka
-//        User user = new User();
-//        System.out.println(fName);
-//        user.setFirstName(fName);
-//        user.setLastName(lName);
-//        user.setEmail(email);
-//        user.setName(userName);
-//        user.setPassword(password);
-//
-//        _userService.add(user);
+        // Logic here
+        //Suzuka
+        User user = new User();
+        System.out.println(fName);
+        user.setFirstName(fName);
+        user.setLastName(lName);
+        user.setEmail(email);
+        user.setName(userName);
+        user.setPassword(password);
+
+        _userService.add(user);
         return "user/search";
     }
 
