@@ -111,7 +111,7 @@ public class UserController {
         // Logic here
         //Aryan code
 
-        return "user/myCart";
+        return "user/logout";
     }
 
 
@@ -175,4 +175,8 @@ public class UserController {
         return "user/RecipePage_five";
     }
 
+    @RequestMapping(value = {"/logout", "user/logout"}, method = RequestMethod.GET)
+    public String returnLogin() {
+        return "home/index";
+    }
 }

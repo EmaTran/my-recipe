@@ -23,6 +23,10 @@
             <div class="card-footer">
                 <img width="100%" src="${pageContext.request.contextPath}/images/store.png"/>
             </div>
+            <button class="btn-blue m-center" name="logout" type="submit" value="LogOut">
+                <a href="${pageContext.request.contextPath}/user/logout" class="btn btn-blue">
+                    Log Out</a>
+            </button>
         </div>
     </jsp:body>
 </t:layoutpage>
